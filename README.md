@@ -57,6 +57,3 @@ function App() {
 - [@Marlena Stojakovic](https://github.com/Stojakovic1)
 - [@Jannik Nahrgang](https://github.com/thejaniak)
 - Ayman
-
-
-ccc
