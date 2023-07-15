@@ -52,7 +52,8 @@ function App() {
 ## Authors
 
 - [@Paulina Daciuk](https://github.com/daciukpaulina)
-- [@alice](https://www.github.com/alice)
-
+- [@Ayşe Nur](https://github.com/aysiscim)
+- [@Erik Ruslanov](https://github.com/0kcalf)
+  [@Marlena Stojakovic](https://github.com/Stojakovic1)
+  [@Jannik Nahrgang](https://github.com/thejaniak)
   
-
