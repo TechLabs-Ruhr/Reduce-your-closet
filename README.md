@@ -12,12 +12,14 @@ By the end you should have filled out the following:
 5. **Authors:** Please add all of you and link your respective GitHub profile and other information if you want to. This part if completely up to you.
 6. If you are done filling out the information below, please **delete this TODO Section** to keep your project readme clean for other people to get to know more about your project.
 
-# Reduce your closet and finally have something to wear!
+# Smartrobe!
 
-Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+Fashion is one of the biggest markets in the world. "Up to 100 billion garments are produced by the fashion industry every year, each year, as much as 92 million tons of clothing ends up in landfills" (source: https://theroundup.org/textile-waste-statistics/). Of course, it creates a huge waste of resources and increases CO2 emissions. Nevertheless, clothing companies still create new collections of clothes in huge quantities, convincing people that they need them. Meanwhile, our closets are already full of "must have’s" from previous seasons, many of them rarely worn. Sometimes it's our problem too.
 
-
-## How to Setup and Run
+The project is created to help people minimize their closets, make them buy less (very often useless and incompatible) clothes, and finally have
+a wardrobe only with things that meet their real needs and preferences. In the app, the users could register their own clothes, their colors and models. Any time a specific piece is worn, the user can note it in the application with one click. Based on this data, the app would create a wearing statiscits, to show to user an actual usability of clothes. 
+For older clothes, which the user has been wearing for some time, it would be possible to enter the estimated data and price of the item based on the user's
+memory.
 
 In order to setup the project, please proceed as follows:
 
