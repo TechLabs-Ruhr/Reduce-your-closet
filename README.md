@@ -18,6 +18,8 @@ Fashion is one of the biggest markets in the world. "Up to 100 billion garments 
 
 The project is created to help people minimize their closets, make them buy less (very often useless and incompatible) clothes, and finally have
 a wardrobe only with things that meet their real needs and preferences. In the app, the users could register their own clothes, their colors and models. Any time a specific piece is worn, the user can note it in the application with one click. Based on this data, the app would create a wearing statiscits, to show to user an actual usability of clothes. 
+For older clothes, which the user has been wearing for some time, it would be possible to enter the estimated data and price of the item based on the user's
+memory.
 
 In order to setup the project, please proceed as follows:
 
