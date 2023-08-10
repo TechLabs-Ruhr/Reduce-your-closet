@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /client 
+WORKDIR /my-react-app 
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
