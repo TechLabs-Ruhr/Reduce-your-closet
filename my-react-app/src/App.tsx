@@ -4,20 +4,16 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 
 //Components
-
-import Header from './components/Header'
 import Nav from './components/Nav'
-import Logo from './components/Logo'
-import HomePictures from './components/HomePictures'
+import Banner from './components/Banner'
 //import LogWindow from './components/LogWindow'
 // import MySmartrobeLoginButton from './components/MySmartrobeLoginButton'
 
 //Pages
-
-import About from './pages/About'
-import MyCloset from './pages/MyCloset'
-import MyStatistics from './pages/MyStatistics'
-import SthElse from './pages/SthElse'
+import Home from './pages/Home'
+import HowItWorks from './pages/How it works';
+import FAQ from './pages/FAQ'
+import SignIn from './pages/Sign In'
 import NotFound from './pages/NotFound'
 
 
@@ -25,25 +21,19 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Logo />
-    </div>
 
     <div>
-      <Header />
-    </div>
+     <Nav />
+   </div> 
     <div>
-      <Nav />
+     <Banner />
     </div>
-    <div>
-      <HomePictures />
-    </div>
-  
+
       <Routes>
-      <Route path='/' Component={About}/>
-      <Route path='/mycloset' Component={MyCloset}/>
-      <Route path='/mystatistics' Component={MyStatistics}/>
-      <Route path='/somethingelse' Component={SthElse}/>
+      <Route path='/' Component={Home}/>
+      <Route path='/howitworks' Component={HowItWorks}/>
+      <Route path='/faq' Component={FAQ}/>
+      <Route path='/signin' Component={SignIn}/>
       <Route Component={NotFound}/>
       </Routes>
      

@@ -2,22 +2,16 @@ import {Link} from "react-router-dom";
 
 const Nav =() => {
   return (
-    
-<div className="nav">
+
+<ul className="navbar">
+<img src="Logo/logo2.png" alt="logo" id='logo'></img>
          
-          <li>
-            <Link to= '/'> ABOUT SMARTROBE </Link>
-          </li>
-          <li>
-            <Link to= '/mycloset'> MY CLOSET </Link>
-          </li>
-          <li>
-            <Link to= '/mystatistics'> MY STATISTICS </Link>
-          </li>
-          <li>
-            <Link to= '/somethingelse'> SOMETHING ELSE </Link>
-          </li>
-      </div>
+      <li><Link to= '/'> HOME </Link></li>
+      <li><Link to= '/howitworks'> HOW IT WORKS </Link></li>
+      <li><Link to= '/faq'> FAQ </Link></li>
+      <li><Link to= '/signin'> SIGN IN </Link></li>
+</ul>
+
         );
     };
     export default Nav;
