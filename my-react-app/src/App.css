@@ -1,9 +1,5 @@
 * {
-  font-family: 'Dosis', sans-serif;
   font-family: 'Inter', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -18,30 +14,29 @@ body {
   width: 149px;
   height: 95px;
   flex-shrink: 0;
+  margin-left: 40px;
+  margin-right: 600px;
 }
 
-ul.navbar {
-width: 1398px;
-height: 108px;
-flex-shrink: 0;
-border: 1px solid #000;
-background: var(--white, rgba(241, 214, 179, 0.7));
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-cursor: pointer;
-font-size: 100%;
-font-weight: bold;
+.navbar {
+  width: 1440px;
+  height: 110px;
+  flex-shrink: 0;
+  border: 2px solid #797070;
+  background: rgba(241, 214, 179, 0.7);
+  box-shadow: 0px 4px 4px 0px rgba(178, 158, 132, 0.7);
+  cursor: pointer;
 }
 
-ul.navbar li {
-  list-style-type: none;
-  display: inline;
-  float: right;
-  padding: 45px 23px 30px 30px;
+.navbar p {
+  display: inline-block;
+  padding: 30px 40px;
   text-shadow: 5px 5px 10px black;
-
+  font-size: 120%;
+  font-weight: bold;
 }
 
-li a:hover {
+p a:hover {
   color: #615d58;
 }
 
@@ -52,10 +47,10 @@ a {
 
 /*Banner css */
 #banner {
-width: 1440px;
-height: 930px;
-flex-shrink: 0;
-margin-top: -16px;
+  width: 1440px;
+  height: 930px;
+  flex-shrink: 0;
+
 }
 
 .banner h1 {
@@ -71,7 +66,7 @@ margin-top: -16px;
   margin-top: -550px;
   margin-left: 700px;
   float: auto;
-  
+
 }
 
 .banner h2 {
@@ -87,53 +82,189 @@ margin-top: -16px;
 }
 
 
-.home h2, .howitworks h2, .faq h2, .signin h2 {
+.home h2,
+.howitworks h2,
+.faq h2,
+.signin h2 {
   text-align: center;
-  padding-top: 30px;
   margin-top: 450px;
-}
-
-.howitworks {
-width: 1440px;
-height: 3081px;
-}
-
-.howitworks h2 {
+  padding-top: 30px;
   color: var(--blackish, #2E2B2B);
-  text-align: center;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Inter;
   font-size: 40px;
-  font-style: normal;
   font-weight: 800;
-  line-height: 24px; /* 60% */
+  line-height: 24px;
+  /* 60% */
   letter-spacing: 1.6px;
-  text-transform: uppercase;
 }
 
-#howitworks1, #howitworks2, #howitworks3 {
-width: 227.911px;
-height: 226.974px;
-flex-shrink: 0;
-border-radius: 25px;
-background: lightgray -40.801px -3.924px / 162.673% 104.756% no-repeat, #D9D9D9;
-box-shadow: 7px 4px 4px 0px rgba(0, 0, 0, 0.25);
+/*How it Works css */
+.howitworks {
+  width: 1440px;
+  height: 450px;
+  background-color: #F5F5F5;
+  margin-top: -10px;
+}
+
+.images,
+.paragrafs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 200px;
+  margin-left: 100px;
+}
+
+.paragrafs {
+  margin-right: 150px;
+  margin-left: 200px;
+}
+
+.howitworks img {
+  width: 227.946px;
+  height: 226.974px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: lightgray -0.914px -5.68px / 110.455% 169.012% no-repeat, #D9D9D9;
+  box-shadow: 7px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .howitworks p {
-color: #000;
-text-align: center;
-font-family: Inter;
-font-size: 24px;
-font-style: normal;
-font-weight: 600;
-line-height: 30px; /* 125% */
-letter-spacing: 1.92px;
-text-transform: capitalize;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  /* 125% */
+  letter-spacing: 1.92px;
+  text-transform: capitalize;
 }
 
+/* SignUp */
 
-/*LogWindow css */
+.register {
+  width: 1440px;
+  height: 650px;
+  display: flex;
+  background-color: #E0B57E; ;
+}
+.form-container h3 {
+  color: #2E2B2B;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 70% */
+  text-decoration: underline solid #2E2B2B;
+}
+
+.form-container {
+  flex-shrink: 0;
+  background-color: #E0B57E;
+  margin-left: 150px;
+  margin-right: 200px;
+  float: left;
+  padding: 10px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  display: flex;
+  width: 432px;
+  height: 30px;
+  padding: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid var(--black, #000);
+  background: var(--white, rgba(255, 255, 255, 0.70));
+}
+
+.form-field-button {
+  display: flex;
+  width: 433px;
+  height: 50px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid  #FFF;
+  background:  #504538;
+  color:  #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 24px; /* 80% */
+}
+
+.success-message {
+  background-color: #3f89f8;
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+span {
+  font-size: 10px;
+  color: rgb(194, 53, 53);
+  margin-bottom: 15px;
+}
+
+input {
+  background: #f2f2f2;
+}
+
+.error {
+  border-style: solid;
+  border: 2px solid #ffa4a4;
+}
+
+.member{
+  color: #000;
+
+  /* Body L */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+
+.member p {
+  color: #000;
+/* Link L */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+ #signuppicture {
+  width: 410px;
+  height: 410px;
+  margin-top: 111px;
+  background: lightgray -1.758px -7.731px / 154.883% 103.256% no-repeat, #D9D9D9;
+  box-shadow: 7px 13px 10px 0px rgba(0, 0, 0, 0.25);
+ }
+
+/*SignIn */
 
 /*.app {
   font-family:'Dosis', sans-serif;

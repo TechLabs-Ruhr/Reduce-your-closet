@@ -6,14 +6,11 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 //Components
 import Nav from './components/Nav'
 import Banner from './components/Banner'
-//import LogWindow from './components/LogWindow'
-// import MySmartrobeLoginButton from './components/MySmartrobeLoginButton'
+import HowItWorks from './components/How it works'
+import Register from './components/Register'
 
 //Pages
-import Home from './pages/Home'
-import HowItWorks from './pages/How it works';
 import FAQ from './pages/FAQ'
-import SignIn from './pages/Sign In'
 import NotFound from './pages/NotFound'
 
 
@@ -27,17 +24,22 @@ function App() {
    </div> 
     <div>
      <Banner />
+     </div>
+     <div>
+     <HowItWorks />
+    </div>
+    <div>
+     <Register />
     </div>
 
-      <Routes>
-      <Route path='/' Component={Home}/>
-      <Route path='/howitworks' Component={HowItWorks}/>
-      <Route path='/faq' Component={FAQ}/>
-      <Route path='/signin' Component={SignIn}/>
-      <Route Component={NotFound}/>
-      </Routes>
-     
+    <Routes>
+    <Route path='/faq' Component={FAQ}/>
+    <Route Component={NotFound}/>
+    </Routes> 
+
     </BrowserRouter>
+    
+
   )
 }
 
