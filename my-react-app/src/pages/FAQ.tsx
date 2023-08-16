@@ -1,3 +1,5 @@
+//in progress
+
 const FAQ = () => {
     return (
       <div className="faq">

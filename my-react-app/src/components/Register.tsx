@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react"
+import {Link} from 'react-router-dom'
 
 function Register() {
   const [values, setValues] = useState({
@@ -29,6 +30,21 @@ function Register() {
     }
     setSubmitted(true);
   };
+
+    const [agree, setAgree] = useState(false);
+  
+    const checkboxHandler = () => {
+      // if agree === true, it will be set to false
+      // if agree === false, it will be set to true
+      setAgree(!agree);
+      // Don't miss the exclamation mark
+    }
+  
+    // When the button is clicked
+    const btnHandler = () => {
+      alert('The buttion is clickable!');
+    };
+  
 
   return (
     <div className="register">
@@ -104,15 +120,24 @@ function Register() {
         {submitted && !values.email && (
           <span id="email-error">Please enter a password </span>
         )}
-
-        <p>  I accept all terms & conditions </p>
-
+        
+    <div className="Terms">
+      <div className="container">
+        <div>
+          <input type="checkbox" id="agree" onChange={checkboxHandler} />
+          <label htmlFor="agree"> I agree to <b>terms and conditions</b></label>
+        </div>
+      </div>
+    </div>
+    <br></br>
         {!valid && (
           <button className="form-field-button" type="submit">
             Register
           </button>
         )}
-        <p> Already a member? <> Sign in.</> </p>
+        <Link to="/Login">
+        <p> Already a member? <b> Sign in.</b> </p>
+        </Link>
       </form>
     </div>
     <img src="Pictures front page/Signup.png" alt="tshirt" id='signuppicture'></img>
