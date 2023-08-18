@@ -15,6 +15,7 @@ services:
       context: ./my-react-app
       dockerfile: Dockerfile
     volumes:
-      - ./my-react-app/:/my-react-app/
+      - ./my-react-app/src/:/my-react-app/src
+      - ./my-react-app/public:/my-react-app/public
     ports:
       - 5173:5173
