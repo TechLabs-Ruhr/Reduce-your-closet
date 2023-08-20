@@ -2,8 +2,9 @@ import { useRef } from "react";
 import Banner from "./components/Banner";
 import HowItWorks from './components/How it works';
 import Register from './components/Register';
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function MainPage() {
   const home = useRef(null);
   const howitworks = useRef(null);
   const register = useRef(null);
@@ -20,7 +21,7 @@ function Navbar() {
     <>
     <div className="navbar">
     <img src="Logo/logo2.png" alt="logo" id='logo'></img>
-          <li onClick={() => scrollToSection(home)} className="link">
+          <li onClick={() => scrollToSection(home)} className="link" >
           HOME
           </li>
           <li onClick={() => scrollToSection(howitworks)} className="link">
@@ -29,13 +30,14 @@ function Navbar() {
           <li onClick={() => scrollToSection(register)} className="link">
           REGISTER 
           </li>
-          <li >
-          SIGN IN
+          <li>
+          <Link to="/signin"> SIGN IN</Link>
           </li>
     </div>
           
       
   <div className="MainPage">
+  
       <div ref={home} >
        <Banner />
       </div>
@@ -50,4 +52,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default MainPage;

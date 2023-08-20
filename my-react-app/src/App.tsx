@@ -1,31 +1,31 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Component } from "react"
 
-//Components
-import Nav from './MainPage'
-import Footer from './components/Footer'
 
-//Pages
+import MainPage from './MainPage'
+import Signin from './components/Signin'
 import FAQ from './pages/FAQ'
-import NotFound from './pages/NotFound'
-//import Login from './pages/Login'
+import Footer from './components/Footer'
+import CreateYourCloset from './pages/CreateYourCloset'
 
 
-function App() {
-  return (
+class App extends Component {
+  render() {
+    return (
     <BrowserRouter>
-      <div> <Nav/> </div>
-      <div> <Footer /> </div>
-
-        <Routes>
+    <Routes>
+        <Route path='/' Component={MainPage}/>
+        <Route path='/signin' Component={Signin}/>
         <Route path='/faq' Component={FAQ}/>
-        <Route Component={NotFound}/>
+        <Route path= '/createyourcloset' Component={CreateYourCloset} />
         </Routes>
+        <div> <Footer /> </div>
     
     </BrowserRouter>
     
 
-  )
+    );
+  }
 }
-
 export default App;

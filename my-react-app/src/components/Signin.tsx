@@ -1,12 +1,13 @@
 //in progress
-
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
-function Login() {
+function Signin() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
 
   // User Login info
   const database = [
@@ -72,17 +73,23 @@ function Login() {
           <input type="submit" />
         </div>
       </form>
+
     </div>
   );
 
   return (
-    <div className="app">
+    <div className="login">
+       <div>
+      <a href="/" className="homepagebutton">
+        <button>Go back to the homepage</button>
+      </a>
+    </div>
       <div className="login-form">
-        <div className="title">Sign In</div>
+        <div className="title">SIGN IN</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signin;

@@ -111,8 +111,8 @@ function Register() {
             className="form-field"
             type="pass"
             placeholder="Password"
-            name="email"
-            value={values.email}
+            name="pass"
+            value={values.pass}
             onChange={handleInputChange}
           />
         )}
@@ -135,7 +135,7 @@ function Register() {
             Register
           </button>
         )}
-        <Link to="/Login">
+        <Link to="/signin">
         <p> Already a member? <b> Sign in.</b> </p>
         </Link>
       </form>

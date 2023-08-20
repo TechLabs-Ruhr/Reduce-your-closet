@@ -2,7 +2,6 @@ const HowItWorks = () => {
     return (
       <div className="howitworks"> 
       <h2> HOW IT WORKS? </h2>
-      <br></br>
       <div className="images">
         <img src="Pictures front page/howitworks1.png" alt="clothes" id='howitworks1'></img>
         <img src="Pictures front page/howitworks2.png" alt="tshirt" id='howitworks2'></img>

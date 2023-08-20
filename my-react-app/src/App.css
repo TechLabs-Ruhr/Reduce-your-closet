@@ -6,8 +6,7 @@
 body {
   height: 100vh;
   width: 1440px;
-  margin: 0 auto;
-  scroll-padding-top: 100px;
+  margin: auto;
 }
 
 /*Nav css */
@@ -15,8 +14,7 @@ body {
 #logo {
   width: 149px;
   height: 95px;
-  flex-shrink: 0;
-  margin-left: 40px;
+  padding-left: 40px;
   margin-right: 600px;
 }
 
@@ -25,20 +23,21 @@ body {
   height: 110px;
   flex-shrink: 0;
   border: 2px solid #797070;
-  background: rgba(241, 214, 179, 0.7);
+  background-color: #f4d8b4; 
   cursor: pointer;
   position: fixed;
+  z-index: 100;
 }
 
 .navbar li {
-  display: inline-block;
+  display: inline;
   padding: 30px 30px;
   text-shadow: 5px 5px 10px black;
   font-size: 120%;
   font-weight: bold;
 }
 
- li a:hover {
+ li :hover {
   color: #615d58;
 }
 
@@ -50,37 +49,37 @@ a {
 /*Banner css */
 #banner {
   width: 1440px;
-  height: 805px;
-  flex-shrink: 0;
- padding-top: 110px;
-
+  height: 800px;
+  padding-top: 110px;
 }
 
-.banner h1 {
+.bannertext  {
+  position: absolute; 
+  width: 800px;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -35%);
+}
+
+
+.bannertext h1 {
   color: #2E2B2B;
   text-align: center;
-  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.2);
   font-size: 48px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 1.92px;
-  text-transform: uppercase;
-  margin-top: -550px;
-  margin-left: 700px;
-  float: auto;
 
 }
 
-.banner h2 {
+.bannertext h2 {
   color: #2E2B2B;
   text-align: center;
   font-family: Inter;
-  font-size: 25px;
-  font-style: normal;
+  font-size: 30px;
   font-weight: 400;
-  line-height: 24px;
-  margin-left: 700px;
+  line-height: 30px;
   text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -88,8 +87,7 @@ a {
 .howitworks h2,
 .signin h2 {
   text-align: center;
-  margin-top: 450px;
-  padding-top: 30px;
+  padding: 30px;
   color: var(--blackish, #2E2B2B);
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 40px;
@@ -104,12 +102,13 @@ a {
   width: 1440px;
   height: 450px;
   background-color: #F5F5F5;
-  margin-top: -10px;
+  margin-top: -40px;
 }
 
 .images,
 .paragrafs {
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   margin-right: 200px;
@@ -117,8 +116,9 @@ a {
 }
 
 .paragrafs {
-  margin-right: 150px;
-  margin-left: 200px;
+  
+  margin-right: 200px;
+  margin-left: 100px;
 }
 
 .howitworks img {
@@ -131,24 +131,26 @@ a {
 }
 
 .howitworks p {
+  width: 227.946px;
+  height: 226.974px;
   color: #000;
   text-align: center;
   font-family: Inter;
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
   line-height: 30px;
   /* 125% */
   letter-spacing: 1.92px;
-  text-transform: capitalize;
 }
 
 /* SignUp */
 
 .register {
   width: 1440px;
-  height: 640px;
-  background-color: #E0B57E; ;
+  height: 615px;
+  background-color: #E0B57E;
+   
+
 }
 .form-container h3 {
   color: #2E2B2B;
@@ -175,15 +177,14 @@ a {
 }
 
 .form-field {
-  display: flex;
   width: 432px;
   height: 30px;
   padding: 8px;
   margin-bottom: 20px;
-  flex-shrink: 0;
   border-radius: 8px;
-  border: 2px solid var(--black, #000);
+  border: 2px solid #000;
   background: var(--white, rgba(255, 255, 255, 0.70));
+  cursor: pointer;
 }
 
 .form-field-button {
@@ -204,9 +205,14 @@ a {
   line-height: 24px; /* 80% */
 }
 
+.form-field-button:hover {
+  background: #5d554c;
+}
+
+
 .success-message {
   background-color: #7cd49f;
-  padding: 15px;
+  padding: 10px;
   color: white;
   text-align: center;
 }
@@ -223,7 +229,7 @@ input {
 
 .error {
   border-style: solid;
-  border: 2px solid #ffa4a4;
+  border: 1px solid #ffa4a4;
 }
 
 .member{
@@ -264,16 +270,18 @@ button:disabled {
 
  .footer {
   width: 1440px;
-  height: 315px;
+  height: 200px;
   background: var(--braun, #6c584c);
   display: flex;
   align-items: center;
 }
 
-.image {
+#logofooter {
   width: 149px;
   height: 95px;
-  padding: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
  }
 
  .footer h3{
@@ -286,9 +294,10 @@ button:disabled {
  }
 
  .followus {
-  padding-left:280px;
-  padding-top:220px;
+  padding-top:100px;
   text-align: center;
+  left: 50%;
+  position: absolute;
  }
 
  .followus img {
@@ -297,35 +306,57 @@ button:disabled {
 
 
 
-/*SignIn */
+/*SignIn NEW PAGE */
 
-/*.app {
-  font-family:'Dosis', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+.login {
+  width: 1440px;
+  height: 400px;
+  background-color: #E0B57E;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+.form {
+  flex-shrink: 0;
+  background-color: #E0B57E;
+ 
+}
+
 input[type="text"],
 input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 432px;
+  height: 30px;
+  padding: 8px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid var(--black, #000);
+  background: var(--white, rgba(255, 255, 255, 0.70));
 }
 
 input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: rgb(142, 171, 142); 
-  border: 1px solid  rgb(142, 171, 142);
-  color: #fff;
-  padding: 10px 20px;
+  width: 300px;
+  height: 50px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid  #FFF;
+  background:  #504538;
+  color:  #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 24px; /* 80% */
 }
 
 input[type="submit"]:hover {
-  background: #6cf0c2;
+  background: #5d554c;
 }
 
 .button-container {
@@ -334,9 +365,9 @@ input[type="submit"]:hover {
 }
 
 .login-form {
-  background-color: white;
+  background-color:  #E0B57E;
+  float: left;
   padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .list-container {
@@ -344,18 +375,80 @@ input[type="submit"]:hover {
 }
 
 .error {
-  color: red;
-  font-size: 12px;
+  font-size: 10px;
+  color: rgb(194, 53, 53);
+  margin-bottom: 15px;
 }
 
 .title {
-  font-size: 25px;
-  margin-bottom: 20px;
+  padding: 30px;
+  color: #2E2B2B;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 70% */
+  text-decoration: underline solid #2E2B2B;
 }
 
-.input-container {
-  display: flex;
-  flex-direction: column;
+.homepagebutton {
+    color: rgb(0, 0, 0);
+    position: absolute; 
+    width: 200px;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
+    color: var(--blackish, #2E2B2B);
+    text-align: center;
+  /* Caps L */
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.8px;
+   
+  }
+
+
+/*Empty Closet NEW PAGE */
+.emptycloset {
+  width: 1440px;
+  height: 803px;
+}
+
+
+.emptycloset h3  {
+  color: whitesmoke;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.emptycloset button  {
+  color: rgb(0, 0, 0);
+  position: absolute; 
+  width: 300px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
   gap: 8px;
-  margin: 10px;
+  border-radius: 8px;
+  background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
+  color: var(--blackish, #2E2B2B);
+  text-align: center;
+/* Caps L */
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.8px;
+ 
 }

@@ -1,10 +1,8 @@
 const Footer =() => {
     return (
     <div className="footer">
-      <div className="image">
-        <img src="Logo/logo2.png" alt="logo" id='logo'></img> 
-      </div>
-        <div className="options">
+    <img src="Logo/logo2.png" alt="logo" id='logofooter'></img> 
+    <div className="options">
           <h3> My Closet </h3>
           <h3> Statitics </h3>
           <h3> FAQ </h3>
