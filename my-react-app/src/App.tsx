@@ -12,6 +12,7 @@ import MyProfile from './pages/MyProfile'
 import MyStatistics from './pages/MyStatistics';
 import MyCloset from './pages/MyCloset';
 import Contact from './pages/Contact';
+import NotFound from './components/NotFound';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
         <Route path= 'createyourcloset/mystatistics' Component={MyStatistics} />
         <Route path= '/contact' Component={Contact} />
         <Route path= '/faq' Component={FAQ} />
+        <Route path= '*' Component={NotFound}/>
         
         </Routes>
         <div> <Footer /> </div>
