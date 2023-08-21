@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Footer =() => {
     return (
     <div className="footer">
     <img src="Logo/logo2.png" alt="logo" id='logofooter'></img> 
     <div className="options">
-          <h3> My Closet </h3>
-          <h3> Statitics </h3>
-          <h3> FAQ </h3>
-          <h3> Contact </h3>
+          <h3> <Link to="createyourcloset/mycloset"> MY CLOSET </Link> </h3>
+          <h3><Link to="createyourcloset/mystatistics"> MY STATISTICS</Link> </h3>
+          <h3> <Link to="faq"> FAQ </Link> </h3>
+          <h3>  <Link to="contact">CONTACT</Link> </h3>
         </div>
         
         <div className="followus">

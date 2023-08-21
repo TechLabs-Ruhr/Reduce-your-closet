@@ -7,7 +7,11 @@ import MainPage from './MainPage'
 import Signin from './components/Signin'
 import FAQ from './pages/FAQ'
 import Footer from './components/Footer'
-import CreateYourCloset from './pages/CreateYourCloset'
+import CreateYourCloset from './pages/MyClosetEmpty'
+import MyProfile from './pages/MyProfile'
+import MyStatistics from './pages/MyStatistics';
+import MyCloset from './pages/MyCloset';
+import Contact from './pages/Contact';
 
 
 class App extends Component {
@@ -17,8 +21,13 @@ class App extends Component {
     <Routes>
         <Route path='/' Component={MainPage}/>
         <Route path='/signin' Component={Signin}/>
-        <Route path='/faq' Component={FAQ}/>
         <Route path= '/createyourcloset' Component={CreateYourCloset} />
+        <Route path='createyourcloset/myprofile' Component={MyProfile} />
+        <Route path= 'createyourcloset/mycloset' Component={MyCloset} />
+        <Route path= 'createyourcloset/mystatistics' Component={MyStatistics} />
+        <Route path= '/contact' Component={Contact} />
+        <Route path= '/faq' Component={FAQ} />
+        
         </Routes>
         <div> <Footer /> </div>
     

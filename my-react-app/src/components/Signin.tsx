@@ -1,7 +1,7 @@
 //in progress
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function Signin() {
   // React States
@@ -79,16 +79,19 @@ function Signin() {
 
   return (
     <div className="login">
-       <div>
-      <a href="/" className="homepagebutton">
-        <button>Go back to the homepage</button>
-      </a>
-    </div>
       <div className="login-form">
-        <div className="title">SIGN IN</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+          <Link to="/" > 
+            <button className="homepagebutton"> GO BACK TO HOMEPAGE </button> 
+          </Link>
+          <br></br>  
+            <div className="title">SIGN IN</div>
+              <div className="form">
+                <div className="button-container">
+                {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+              </div>
+            </div>
+        </div>
       </div>
-    </div>
   );
 }
 
