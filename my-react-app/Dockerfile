@@ -16,4 +16,4 @@ EXPOSE 5173
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--host"]

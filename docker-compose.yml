@@ -5,17 +5,16 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ./backend/:/backend/
-    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 80
+      - ./backend/app/:/backend/app/
     ports:
-      - 80:80
+      - 8080:8080
   
   my-react-app:
     build:
       context: ./my-react-app
       dockerfile: Dockerfile
     volumes:
-      - ./my-react-app/src/:/my-react-app/src
-      - ./my-react-app/public:/my-react-app/public
+      - ./my-react-app/src/:/my-react-app/src/
+      - ./my-react-app/public/:/my-react-app/public/
     ports:
       - 5173:5173
