@@ -32,21 +32,46 @@ function Signin() {
 
     var { uname, pass } = document.forms[0];
 
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({username: 'acutalusername', password: 'actualpassword'})
+      };
+    
+      fetch('http://localhost:8080/signin',requestOptions)
+        .then((response) => {
+          if(! response.ok){
+           throw Error(response.statusText);
+          }
+          response.json()})
+        .then((data) => {
+           console.log(data);
 
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
         setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
-    }
+           //redirect and set current user
+         })
+         .catch((err) => {
+            console.log(err.message);
+        setErrorMessages({ name: "uname", message: err.message });
+         });
+
+    // u dont really need this now :)
+
+    // Find user login info
+    // const userData = database.find((user) => user.username === uname.value);
+
+    // // Compare user info
+    // if (userData) {
+    //   if (userData.password !== pass.value) {
+    //     // Invalid password
+    //     setErrorMessages({ name: "pass", message: errors.pass });
+    //   } else {
+    //     setIsSubmitted(true);
+    //   }
+    // } else {
+    //   // Username not found
+    //   setErrorMessages({ name: "uname", message: errors.uname });
+    // }
   };
 
   // Generate JSX code for error message
