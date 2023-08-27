@@ -15,7 +15,6 @@ body {
   width: 149px;
   height: 95px;
   padding-left: 40px;
-  margin-right: 600px;
 }
 
 .navbar {
@@ -499,7 +498,7 @@ a {
 .emptycloset h3  {
   color: whitesmoke;
   position: absolute; 
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -508,7 +507,7 @@ a {
   color: rgb(0, 0, 0);
   position: absolute; 
   width: 300px;
-  top: 70%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline-flex;
@@ -528,5 +527,6 @@ a {
 }
 
 /*My Profile NEW PAGE */
+
 
 

@@ -1,5 +1,6 @@
 import { useState } from "react"
-import {Link} from 'react-router-dom'
+import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [values, setValues] = useState({
@@ -8,6 +9,8 @@ function Register() {
     email: "",
     pass: ""
   });
+
+  const [errorMessages, setErrorMessages] = useState({});
 
   const handleInputChange = (event) => {
     /* event.persist(); NO LONGER USED IN v.17*/
@@ -20,8 +23,13 @@ function Register() {
     }));
   };
 
+  const errors = {
+    email: "invalid email",
+  };
+
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,6 +52,31 @@ function Register() {
     const btnHandler = () => {
       alert('The buttion is clickable!');
     };
+
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(values)
+    }
+    
+    fetch('http://localhost:8080/', config)
+      .then(response => response.json())
+      .then(result => {
+        if (result.error) {
+         throw new Error(result.error) 
+        }
+        setValues(result.firstName);
+        setValues(result.lastName);
+        setValues(result.email);
+        setValues(result.pass);
+        <Navigate replace to="/createyourcloset" />
+
+
+        console.log(errorMessages);
+        setErrorMessages({ name: "email", message: errorMessages });
+         });
   
 
   return (

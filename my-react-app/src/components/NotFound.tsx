@@ -1,5 +1,3 @@
-// check out why doestn it work! 
-
 const NotFound = () => {
     return (
       <div className="notfound">

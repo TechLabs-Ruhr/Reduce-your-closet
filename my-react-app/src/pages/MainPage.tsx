@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import Banner from "./components/Banner";
-import HowItWorks from './components/How it works';
-import Register from './components/Register';
+import Banner from "../components/Banner";
+import HowItWorks from '../components/How it works';
+import Register from '../components/Register';
 import { Link } from "react-router-dom";
 
 function MainPage() {

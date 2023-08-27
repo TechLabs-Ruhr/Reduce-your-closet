@@ -15,8 +15,8 @@ const MyClosetEmpty = () => {
   }, []);
 
   //if (!authenticated) {
-    //return <Navigate replace to="/signin" />
-  //} else {
+   // return <Navigate replace to="/signin" />
+  //} else {  <Navigate replace to="/createyourcloset" /> }
 
 
   
@@ -30,7 +30,7 @@ const MyClosetEmpty = () => {
           <img src="PicturesCloset/EmptyCloset.png" alt="emptycloset" id='emptycloset'></img>
           <h3> YOUR CLOSET IS EMPTY </h3>
           <div>
-          <Link to="additem"> <button>CREATE YOUR CLOSET</button></Link>
+          <Link to="/additem"> <button>CREATE YOUR CLOSET</button></Link>
           </div>
         </div>
       </div>
@@ -38,4 +38,4 @@ const MyClosetEmpty = () => {
     );
   }
 
-export default MyClosetEmpty;
+export default MyClosetEmpty
