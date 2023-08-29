@@ -1,9 +1,7 @@
 import { useState, useContext } from 'react';
-import { ClothesContext } from '../contexts/ClothesContext'
 
 const EditButton = ({ item }) => {
 
-  const { dispatch } = useContext(ClothesContext);
 
   const [showEditForm, setShowEditForm] = useState(false);
   const [editedItem, setEditedItem] = useState({
@@ -52,8 +50,9 @@ const EditButton = ({ item }) => {
   return (
     <div>
       <div>
-        <button onClick={() => toggleEditForm()}>Edit</button>
+        <button onClick={() => toggleEditForm()}>EDIT</button>
       </div>
+      <div className='editform'>
       { showEditForm ?
         (<form onSubmit={handleEditSubmit}>
           <label>Description:</label>
@@ -62,9 +61,10 @@ const EditButton = ({ item }) => {
           <input type='text' placeholder={item.color} onChange={handleColorChange}/>
           <label>Brand:</label>
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
-          <button className="item-buttons" type='submit'>Confirm</button>
+          <button className="item-buttons" type='submit'>CONFIRM</button>
         </form>)
         : null}
+        </div>
     </div>
   );
 }
