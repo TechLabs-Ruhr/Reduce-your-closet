@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar(userloged)";
 import { Link } from "react-router-dom";
 
@@ -14,12 +13,8 @@ const MyClosetEmpty = () => {
     }
   }, []);
 
-  //if (!authenticated) {
-   // return <Navigate replace to="/signin" />
-  //} else {  <Navigate replace to="/createyourcloset" /> }
 
 
-  
     return (
 
       <div>

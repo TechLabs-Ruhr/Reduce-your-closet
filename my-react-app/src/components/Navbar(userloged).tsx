@@ -3,10 +3,7 @@ const Navbar = () => {
     return (
 
     <div className="navbar2">
-    <img src="Logo/logo2.png" alt="logo" id='logo'></img>
-         <li>
-        <Link to="/">HOME</Link>
-        </li>
+    <img src="Logo/logowhite.png" alt="logo" id='logo'></img>
         <li>
         <Link to="myprofile"> MY PROFILE</Link>
         </li>

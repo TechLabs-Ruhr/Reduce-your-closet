@@ -20,7 +20,7 @@ function MainPage() {
   return (
     <>
     <div className="navbar">
-    <img src="Logo/logo2.png" alt="logo" id='logo'></img>
+    <img src="Logo/logowhite.png" alt="logo" id='logo'></img>
           <li onClick={() => scrollToSection(home)} className="link" >
           HOME
           </li>
@@ -33,7 +33,8 @@ function MainPage() {
           <li>
           <Link to="/signin"> SIGN IN</Link>
           </li>
-    </div>
+          </div>
+
           
       
   <div className="MainPage">

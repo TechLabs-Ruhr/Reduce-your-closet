@@ -1,7 +1,7 @@
 import './CSS/App.css'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { Component } from "react"
-import ClothesContextProvider from './contexts/ClothesContext';
+
 
 
 import MainPage from './pages/MainPage'
@@ -21,21 +21,21 @@ class App extends Component {
   render() {
     return (
     <BrowserRouter>
-     <ClothesContextProvider>
+    
     <Routes>
         <Route path='/' Component={MainPage}/>
         <Route path='/signin' Component={Signin}/>
         <Route path= '/createyourcloset' Component={CreateYourCloset} />
-        <Route path='createyourcloset/myprofile' Component={MyProfile} />
-        <Route path= 'createyourcloset/mycloset' Component={MyCloset} />
-        <Route path= 'createyourcloset/mystatistics' Component={MyStatistics} />
+        <Route path='/createyourcloset/myprofile' Component={MyProfile} />
+        <Route path= '/createyourcloset/mycloset' Component={MyCloset} />
+        <Route path= '/createyourcloset/mystatistics' Component={MyStatistics} />
         <Route path= '/contact' Component={Contact} />
         <Route path= '/additem' Component={AddItem} />
         <Route path= '/faq' Component={FAQ} />
         <Route path= '*' Component={NotFound}/>
         
         </Routes>
-        </ClothesContextProvider>
+      
         <div> <Footer /> </div>
         
     
