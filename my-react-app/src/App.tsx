@@ -1,4 +1,4 @@
-import './CSS/App.css'
+import './CSS/MainPage.css'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { Component } from "react"
 
@@ -26,9 +26,9 @@ class App extends Component {
         <Route path='/' Component={MainPage}/>
         <Route path='/signin' Component={Signin}/>
         <Route path= '/createyourcloset' Component={CreateYourCloset} />
-        <Route path='/createyourcloset/myprofile' Component={MyProfile} />
-        <Route path= '/createyourcloset/mycloset' Component={MyCloset} />
-        <Route path= '/createyourcloset/mystatistics' Component={MyStatistics} />
+        <Route path='/myprofile' Component={MyProfile} />
+        <Route path= '/mycloset' Component={MyCloset} />
+        <Route path= '/mystatistics' Component={MyStatistics} />
         <Route path= '/contact' Component={Contact} />
         <Route path= '/additem' Component={AddItem} />
         <Route path= '/faq' Component={FAQ} />

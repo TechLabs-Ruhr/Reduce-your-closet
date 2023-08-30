@@ -1,0 +1,35 @@
+.emptycloset {
+    width: 1440px;
+    height: 803px;
+    padding-top: 110px;
+  }
+  
+  .emptycloset h3  {
+    color: whitesmoke;
+    position: absolute; 
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .emptycloset button  {
+    color: rgb(0, 0, 0);
+    position: absolute; 
+    width: 300px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
+    color: var(--blackish, #2E2B2B);
+    text-align: center;
+  /* Caps L */
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.8px;
+  }

@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
-const EditButton = ({ item }) => {
+const EditForm = ({ item }) => {
 
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -50,18 +50,18 @@ const EditButton = ({ item }) => {
   return (
     <div>
       <div>
-        <button onClick={() => toggleEditForm()}>EDIT</button>
+        <button onClick={() => toggleEditForm()}>EDIT ITEM</button>
       </div>
       <div className='editform'>
       { showEditForm ?
         (<form onSubmit={handleEditSubmit}>
-          <label>Description:</label>
+          <label>Description</label>
           <input type='text' placeholder={item.description} onChange={handleDescChange}/>
-          <label>Color:</label>
+          <label>Color</label>
           <input type='text' placeholder={item.color} onChange={handleColorChange}/>
-          <label>Brand:</label>
+          <label>Brand</label>
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
-          <button className="item-buttons" type='submit'>CONFIRM</button>
+          <button className="confirmbutton" type='submit'>CONFIRM</button>
         </form>)
         : null}
         </div>
@@ -69,4 +69,4 @@ const EditButton = ({ item }) => {
   );
 }
 
-export default EditButton;
+export default EditForm;

@@ -1,24 +1,24 @@
 import DeleteButton from "./DeleteButton"
-import EditButton from './EditButton'
+import EditForm from './EditForm'
 
 const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true}) => {
   return (
-    <div>
+    <div id='itemslist'>
       {itemList.map( item => (
-        <div key={item.id}>
+        <fieldset id='item' key={item.id}>
           <div >
             <p>{item.description}</p>
             <p ><span>{item.color}</span><span>{item.brand}</span></p>
           </div>
           <div >
             <div>
-            { canBeEdited && <EditButton item={item} />}
+            { canBeEdited && <EditForm item={item} />}
             </div>
             <div>
             { canBeDeleted && <DeleteButton id={item.id} />}
             </div>
           </div>
-        </div>
+        </fieldset>
       ))}
     </div>
   );

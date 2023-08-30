@@ -1,0 +1,36 @@
+#logo {
+    width: 149px;
+    height: 95px;
+    padding-left: 40px;
+    margin-right: 600px;
+  }
+  
+  .navbar2 {
+    width: 1440px;
+    height: 110px;
+    flex-shrink: 0;
+    border: 2px solid #797070;
+    background-color: #2D261E; 
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  .navbar2 li {
+    color:#E6E6E6;
+    display: inline;
+    padding: 30px 30px;
+    text-shadow: 3px 3px 5px rgb(92, 90, 90);
+    font-size: 120%;
+    font-weight: bold;
+  }
+  
+   li :hover {
+    color: #615d58;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  

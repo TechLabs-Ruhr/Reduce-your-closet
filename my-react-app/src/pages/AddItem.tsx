@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
+import Navbar from "../components/Navbar(userloged)"
 
 const AddItem = () => {
   const [typeOfItem, setTypeOfItem] = useState('');
@@ -10,6 +11,9 @@ const AddItem = () => {
 
   return (
     <div className='addItem'>
+          <div className="navbar(userloged)"> 
+           <Navbar />
+          </div>
       <h2>Add a new item to your wardrobe</h2>
       <select className='select' onChange={handleTypeChange}>
         <option value="">Type of item</option>

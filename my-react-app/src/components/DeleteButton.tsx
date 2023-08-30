@@ -1,6 +1,3 @@
-import { useContext } from 'react'
-
-
 const DeleteButton = ({ id }) => {
 
 

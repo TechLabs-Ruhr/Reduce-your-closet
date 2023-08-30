@@ -1,11 +1,54 @@
+* {
+font-family: 'Inter', sans-serif;
+}
+  
+
 .MyCloset {
-height: 100vh;
 width: 1440px;
 margin: auto;
+border: solid #D9D9D9;
 }
 
-.title2 {
-padding-top: 110px;
+#additem {
+width: 255px;
+height: 44px;
+padding: 8px 16px;
+color:#161616;
+font-size: 30px;
+line-height: 24px;
+border-radius: 13px;
+background: #E3B881;
+box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+margin-left: 100px;
+}
+
+.MyClosetHeader h2 {
+padding: 130px 30px 20px 20px;
+color: #161616;
+font-size: 40px;
+font-weight: 700;
+line-height: 48px; /* 120% */
+}
+
+.MyCloset h3 {
+color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; 
+text-decoration: underline solid #2E2B2B;
+}
+
+#itemslist {
+display: flex;
+justify-content: center;
+}
+
+#item {
+padding: 10px;
+margin:10px 25px;
 }
 
 fieldset{
@@ -13,10 +56,39 @@ width: 124px;
 height: 124px;
 flex-shrink: 0;
 border-radius: 10px;
+background: #D9D9D9;
+border: white;
 }
 
 .editform {
-z-index: 100;
 position: absolute;
 background-color: bisque;
+width: 250px;
+margin-left: -20px;
+border-radius: 20px;
 }
+
+.editform label, .editform input {
+width: 200px;
+height: 5px;
+margin-left: 10px;
+}
+
+.editform input {
+font-size: 80%;
+}
+
+.editform label {
+font-size: 80%;
+}
+
+.confirmbutton {
+color: rgb(0, 0, 0); 
+padding: 8px 16px;
+border-radius: 8px;
+background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
+color: var(--blackish, #2E2B2B);
+text-align: center;
+}
+
+

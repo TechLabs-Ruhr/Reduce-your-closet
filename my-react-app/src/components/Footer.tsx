@@ -5,8 +5,8 @@ const Footer =() => {
     <div className="footer">
     <img src="Logo/logo2.png" alt="logo" id='logofooter'></img> 
     <div className="options">
-          <h3> <Link to="createyourcloset/mycloset"> MY CLOSET </Link> </h3>
-          <h3><Link to="createyourcloset/mystatistics"> MY STATISTICS</Link> </h3>
+          <h3> <Link to="/mycloset"> MY CLOSET </Link> </h3>
+          <h3><Link to="/mystatistics"> MY STATISTICS</Link> </h3>
           <h3> <Link to="faq"> FAQ </Link> </h3>
           <h3>  <Link to="contact">CONTACT</Link> </h3>
         </div>

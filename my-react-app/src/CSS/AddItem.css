@@ -1,1 +1,13 @@
-/*will be styled
+* {
+    font-family: 'Inter', sans-serif;
+    }
+      
+    
+    .addItem {
+    width: 1440px;
+    margin: auto;
+    }
+
+    .addItem h2 {
+    padding: 130px 30px 20px 0px;
+    }
