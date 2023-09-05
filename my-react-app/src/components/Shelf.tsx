@@ -1,7 +1,8 @@
 import DeleteButton from "./DeleteButton"
 import EditForm from './EditForm'
+import WearingCounter from "./WearingCounter";
 
-const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true}) => {
+const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted = true}) => {
   return (
     <div id='itemslist'>
       {itemList.map( item => (
@@ -16,6 +17,9 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true}) => {
             </div>
             <div>
             { canBeDeleted && <DeleteButton id={item.id} />}
+            <div>
+            { canBeCounted && <WearingCounter id={item.id} />}
+            </div>
             </div>
           </div>
         </fieldset>
