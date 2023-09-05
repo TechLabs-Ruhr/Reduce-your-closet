@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer =() => {
     return (
     <div className="footer">
-    <img src="Logo/logo2.png" alt="logo" id='logofooter'></img> 
+        <img src="Logo/logowhite.png" alt="logo" id='logofooter'></img>
     <div className="options">
           <h3> <Link to="/mycloset"> MY CLOSET </Link> </h3>
           <h3><Link to="/mystatistics"> MY STATISTICS</Link> </h3>

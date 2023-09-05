@@ -2,7 +2,7 @@ const DeleteButton = ({ id }) => {
 
 
   return (
-    <div className="item-buttons delete-button">
+    <div className="delete-button">
       <button onClick={() => ( {type: 'REMOVE_ITEM', id: id} )}>REMOVE</button>
     </div>
   );
