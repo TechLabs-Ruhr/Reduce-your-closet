@@ -41,17 +41,22 @@ line-height: 32px;
 text-decoration: underline solid #2E2B2B;
 }
 
+
 #itemslist {
 display: flex;
-justify-content: center;
+flex-direction: row;
+justify-content: center
 }
 
-#item {
+#itemsbuttons {
 padding: 10px;
-margin:10px 25px;
+margin:5px 20px;
 }
+
 
 fieldset{
+padding: 10px;
+margin:5px 20px;
 width: 124px;
 height: 124px;
 flex-shrink: 0;
@@ -60,35 +65,53 @@ background: #D9D9D9;
 border: white;
 }
 
-.editform {
+.ClosetButtons {
+width: 124px;
+margin-bottom: 5px;
+border-radius: 8px;
+background: #E3B881;
+color: var(--blackish, #2E2B2B);
+font-size: 10px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0.8px;
+}
+
+
+
+#editform {
 position: absolute;
-background-color: bisque;
+background-color: rgb(255, 255, 255);
 width: 250px;
 margin-left: -20px;
 border-radius: 20px;
 }
 
-.editform label, .editform input {
+#editform label, #editform input {
 width: 200px;
 height: 5px;
 margin-left: 10px;
 }
 
-.editform input {
+#editform input {
 font-size: 80%;
 }
 
-.editform label {
+#editform label {
 font-size: 80%;
 }
 
 .confirmbutton {
-color: rgb(0, 0, 0); 
-padding: 8px 16px;
+width: 124px;
+margin-bottom: 5px;
 border-radius: 8px;
-background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
+background: #E3B881;
 color: var(--blackish, #2E2B2B);
-text-align: center;
+font-size: 10px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0.8px;
+margin-left: 10px;
 }
 
 

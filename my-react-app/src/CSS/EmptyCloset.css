@@ -27,9 +27,8 @@
     background: var(--light-gray, linear-gradient(0deg, #E6E6E6 0%, #E6E6E6 100%), rgba(255, 255, 255, 0.70));
     color: var(--blackish, #2E2B2B);
     text-align: center;
-  /* Caps L */
     font-size: 20px;
     font-weight: 600;
-    line-height: 24px; /* 120% */
+    line-height: 24px;
     letter-spacing: 0.8px;
   }

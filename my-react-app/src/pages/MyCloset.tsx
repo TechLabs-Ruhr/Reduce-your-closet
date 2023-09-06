@@ -2,7 +2,6 @@ import Shelf from '../components/Shelf'
 import { useState } from 'react'
 import { v4 as uuidv4} from 'uuid'
 import Navbar from "../components/Navbar(userloged)"
-import '../CSS/SignIn.css'
 import '../CSS/MyCloset.css'
 import { Link } from "react-router-dom"
 
@@ -11,15 +10,15 @@ const MyCloset = () => {
   const clothes = [
       {
         type: 'top',
-        color: '',
-        brand: '',
+        color: 'red',
+        brand: 'stradivarius',
         description: 'blouse',
         id: uuidv4()
       },
       {
         type: 'top',
-        color: '',
-        brand: '',
+        color: 'green',
+        brand: 'HM',
         description: 'tshirt',
         id: uuidv4()
       },

@@ -1,4 +1,5 @@
 import {useState, useRef } from 'react'
+import '../CSS/MyCloset.css'
  
 function WearingCounter() {
   const setCounter = useState(0);
@@ -25,9 +26,9 @@ function WearingCounter() {
   return (
     <div className="counter">
       <div className="btn__container">
-      <button onClick={() => toggleDatePicker()}> MARK AS WORN </button>
+      <button className='ClosetButtons' onClick={() => toggleDatePicker()}> MARK AS WORN </button>
       </div>
-      <div className='datepicker'>
+      <div id='datepicker'>
       { showDatePicker?
         ( <input
           type="date"

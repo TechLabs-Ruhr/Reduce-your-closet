@@ -50,9 +50,9 @@ const EditForm = ({ item }) => {
   return (
     <div>
       <div>
-        <button onClick={() => toggleEditForm()}>EDIT ITEM</button>
+        <button className='ClosetButtons' onClick={() => toggleEditForm()}>EDIT ITEM</button>
       </div>
-      <div className='editform'>
+      <div id='editform'>
       { showEditForm ?
         (<form onSubmit={handleEditSubmit}>
           <label>Description</label>

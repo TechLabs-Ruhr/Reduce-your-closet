@@ -42,6 +42,7 @@ const ItemForm = ({ typeOfItem }) => {
   return (
     <div className='itemForm'>
       <form onSubmit={handleSubmit}>
+        <br></br>
         <div>
           <label>What kind of {typeOfItem} is it?</label>
           <br />
@@ -57,12 +58,14 @@ const ItemForm = ({ typeOfItem }) => {
           <br />
           <input name="color" type="text" placeholder="Brand..." onChange={handleBrandChange} required />
         </div>
-        <button type="submit">Add the item</button>
+        <button id="create"> CREATE </button>
+        <button id="cancel"> CANCEL </button>
       </form>
       <div>
         {feedback && <p className="feedback">feedback</p>}
       </div>
     </div>
+   
   );
 }
 
