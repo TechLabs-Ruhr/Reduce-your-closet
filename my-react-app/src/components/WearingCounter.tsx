@@ -21,20 +21,21 @@ function WearingCounter() {
     const handleChange = (e) => {
       setDate(e.target.value);
     };
+
+    
   
  
   return (
     <div className="counter">
-      <div className="btn__container">
+      <div className="buttonContainer">
       <button className='ClosetButtons' onClick={() => toggleDatePicker()}> MARK AS WORN </button>
       </div>
       <div id='datepicker'>
       { showDatePicker?
-        ( <input
-          type="date"
-          onChange={handleChange}
-          ref={dateInputRef}
-        /> )
+        ( <form onChange={handleChange}>
+            <input type="date" />
+            <button id="'SubmitButton" type='submit'> Submit </button>  
+        </form> )
         : null}
         </div>
     </div>

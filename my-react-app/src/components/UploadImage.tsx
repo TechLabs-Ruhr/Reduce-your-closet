@@ -4,9 +4,10 @@ const UploadImage = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
+
   return (
-    <div>
-      <h4>Upload Image </h4>
+    <div className="Upload">
+      <h4> Upload Image </h4>
       {selectedImage && (
         <div>
           <img
@@ -14,13 +15,8 @@ const UploadImage = () => {
             width={"250px"}
             src={URL.createObjectURL(selectedImage)}
           />
-          <br />
-          <button onClick={() => setSelectedImage(null)}>Remove</button>
-        </div>
+      </div>
       )}
-
-      <br />
-      <br />
       
       <input
         type="file"

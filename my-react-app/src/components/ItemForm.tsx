@@ -1,6 +1,6 @@
 import { useState} from 'react'
 import { v4 as uuidv4 } from 'uuid'
-
+import UploadImage from '../components/UploadImage'
 
 const ItemForm = ({ typeOfItem }) => {
   const [description, setDescription] = useState('');
@@ -40,26 +40,29 @@ const ItemForm = ({ typeOfItem }) => {
   }
 
   return (
-    <div className='itemForm'>
+    <div className='itemFormContainer'>
+       <div id='uploadImage'>
+        <UploadImage/>
+      </div>
       <form onSubmit={handleSubmit}>
         <br></br>
-        <div>
+        <div id='itemForm'>
           <label>What kind of {typeOfItem} is it?</label>
           <br />
           <input name="desc" type="text" placeholder={`Description...`} onChange={handleDescChange} required />
-        </div>
-        <div>
+        
           <label>Color of the {typeOfItem}</label>
           <br />
           <input name="color" type="text" placeholder="Color..." onChange={handleColorChange} required />
-        </div>
-        <div>
+       
           <label>Brand</label>
           <br />
           <input name="color" type="text" placeholder="Brand..." onChange={handleBrandChange} required />
-        </div>
-        <button id="create"> CREATE </button>
-        <button id="cancel"> CANCEL </button>
+          <button id="create"> CREATE </button>
+          <button id="cancel"> CANCEL </button>
+         </div>
+       
+        
       </form>
       <div>
         {feedback && <p className="feedback">feedback</p>}

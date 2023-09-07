@@ -4,7 +4,8 @@
   
   body {
     width: 1440px;
-    margin: auto;
+    height: 850px;
+    border: solid #ffffff;
   }
 
   .faq h3, 

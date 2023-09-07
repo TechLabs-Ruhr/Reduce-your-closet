@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
 import Navbar from "../components/Navbar(userloged)"
-import UploadImage from '../components/UploadImage'
+
 
 const AddItem = () => {
   const [typeOfItem, setTypeOfItem] = useState('');
@@ -11,14 +11,10 @@ const AddItem = () => {
   }
 
   return (
-    <div className='addItem'>
-          <div className="navbar(userloged)"> 
-           <Navbar />
-          </div>
-          <h2>Add a new item to your SMARTROBE </h2>
-          <div id='uploadImage'>
-         <UploadImage/>
-         </div>
+    <div className='AddItem'>
+        <Navbar />
+        <h2 id ='AddItemTitle'>Add a new item to your SMARTROBE </h2>
+
       <select className='select' onChange={handleTypeChange}>
         <option value="">Please choose category</option>
         <option value="top">TOPS</option>
@@ -29,13 +25,15 @@ const AddItem = () => {
         <option value="bag">BAGS</option>
 
       </select>
+      
       {(typeOfItem === 'top' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'bottom' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'shoes' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'outwear' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'accesorie' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'bag' && <ItemForm typeOfItem={typeOfItem} />)}
-    </div>
+      
+   </div>
   );
 }
 
