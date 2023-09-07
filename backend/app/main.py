@@ -2,8 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-
-
 app = FastAPI()
 
 # set origin to prevent security breaches - change on deployment!
@@ -21,9 +19,42 @@ class Signup(BaseModel):
     username: str
     password: str
 
+class Piece:
+    def __init__(self, category, color, size, manufacturer):
+        self.category = category
+        self.color = color
+        self.size = size
+        self.manufacturer = manufacturer
+        self.worn_dates = []
+        self.buying_info = None
+        self.care_instructions = ""
+        self.tag = ""
+        self.notes = ""
+
+    def wear(self, date):
+        self.worn_dates.append(date)
+
+    def add_buying_info(self, price, buy_date, shop):
+        self.buying_info = {
+            "price": price,
+            "buy_date": buy_date,
+            "shop": shop
+        }
+
+class PieceType(BaseModel):
+	category: str
+	color: str
+	size: str
+	manufacturer: str
+
 @app.get('/')
 def read_root():
 	return {'App is': 'running'}
+
+@app.post('/createPiece')
+async def create_Piece(piece: PieceType):
+	test = Piece(piece)
+	return test
 
 
 @app.get("/clth/{id}")
