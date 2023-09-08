@@ -6,7 +6,7 @@ const ItemForm = ({ typeOfItem }) => {
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
-  const [feedback, setFeedback] = useState(null);
+  const [setFeedback] = useState(null);
 
 
   const handleDescChange = e => {
@@ -22,7 +22,7 @@ const ItemForm = ({ typeOfItem }) => {
     e.preventDefault();
 
     if(description === '' || color === '' || brand === ''){
-      setFeedback('You must fill in all the fields!')
+      setFeedback
       setTimeout(() => {
         setFeedback(null);
       }, 3000)
@@ -34,8 +34,6 @@ const ItemForm = ({ typeOfItem }) => {
         brand,
         id: uuidv4()
       }
-      dispatch({type: 'ADD_ITEM', newItem});
-      history.push('/');
     }
   }
 
@@ -43,7 +41,7 @@ const ItemForm = ({ typeOfItem }) => {
     <div className='itemFormContainer'>
        <div id='uploadImage'>
         <UploadImage/>
-      </div>
+       </div>
       <form onSubmit={handleSubmit}>
         <br></br>
         <div id='itemForm'>
@@ -58,18 +56,12 @@ const ItemForm = ({ typeOfItem }) => {
           <label>Brand</label>
           <br />
           <input name="color" type="text" placeholder="Brand..." onChange={handleBrandChange} required />
-          <button id="create"> CREATE </button>
+          <button id="create" type="submit"> CREATE </button>
           <button id="cancel"> CANCEL </button>
          </div>
-       
-        
       </form>
-      <div>
-        {feedback && <p className="feedback">feedback</p>}
-      </div>
     </div>
-   
   );
-}
+};
 
 export default ItemForm;

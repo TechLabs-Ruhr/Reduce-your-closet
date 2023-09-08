@@ -13,7 +13,7 @@ function Register() {
   const [errorMessages, setErrorMessages] = useState({});
 
   const handleInputChange = (event) => {
-    /* event.persist(); NO LONGER USED IN v.17*/
+    
     event.preventDefault();
 
     const { name, value } = event.target;
@@ -45,7 +45,6 @@ function Register() {
       // if agree === true, it will be set to false
       // if agree === false, it will be set to true
       setAgree(!agree);
-      // Don't miss the exclamation mark
     }
   
     // When the button is clicked
@@ -81,50 +80,47 @@ function Register() {
 
   return (
     <div className="register">
-    <div className="form-container">
-    <h3>SIGN UP</h3>
-      <form className="register-form" onSubmit={handleSubmit}>
-        {submitted && valid && (
-          <div className="success-message">
-            <h3>
-              {" "}
-              Welcome {values.firstName} {values.lastName}{" "}
-            </h3>
-            <div> Your registration was successful! </div>
-          </div>
-          
+      <div className="form-container">
+        <h3>SIGN UP</h3>
+          <form className="register-form" onSubmit={handleSubmit}>
+            {submitted && valid && (
+              <div className="success-message">
+                <h3>
+                  {" "} Welcome {values.firstName} {values.lastName}{" "}
+                </h3>
+                <div> Your registration was successful! </div>
+             </div>
         )}
-        {!valid && (
-          <input
-            className="form-field"
-            type="text"
-            placeholder="First Name"
-            name="firstName"
-            value={values.firstName}
-            onChange={handleInputChange}
+            {!valid && (
+              <input
+              className="form-field"
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              value={values.firstName}
+              onChange={handleInputChange}
+          />
+        )}
+            {submitted && !values.firstName && (
+              <span id="first-name-error">Please enter a first name</span>
+        )}
+
+            {!valid && (
+              <input
+              className="form-field"
+              type="text"
+              placeholder="Last Name"
+              name="lastName"
+              value={values.lastName}
+              onChange={handleInputChange}
           />
         )}
 
-        {submitted && !values.firstName && (
-          <span id="first-name-error">Please enter a first name</span>
-        )}
-
-        {!valid && (
-          <input
-            className="form-field"
-            type="text"
-            placeholder="Last Name"
-            name="lastName"
-            value={values.lastName}
-            onChange={handleInputChange}
-          />
-        )}
-
-        {submitted && !values.lastName && (
+          {submitted && !values.lastName && (
           <span id="last-name-error">Please enter a last name</span>
         )}
 
-        {!valid && (
+          {!valid && (
           <input
             className="form-field"
             type="email"
@@ -154,15 +150,15 @@ function Register() {
           <span id="email-error">Please enter a password </span>
         )}
         
-    <div className="Terms">
-      <div className="container">
-        <div>
-          <input type="checkbox" id="agree" onChange={checkboxHandler} />
-          <label htmlFor="agree"> I agree to <b>terms and conditions</b></label>
+      <div className="Terms">
+        <div className="container">
+          <div>
+            <input type="checkbox" id="agree" onChange={checkboxHandler} />
+            <label htmlFor="agree"> I agree to <b>terms and conditions</b></label>
+          </div>
         </div>
       </div>
-    </div>
-    <br></br>
+      <br></br>
         {!valid && (
           <button className="form-field-button" type="submit">
             Register
@@ -173,7 +169,7 @@ function Register() {
         </Link>
       </form>
     </div>
-    <img src="Pictures front page/Signup.png" alt="tshirt" id='signuppicture'></img>
+      <img src="Pictures front page/Signup.png" alt="tshirt" id='signuppicture'></img>
     </div>
   );
 }

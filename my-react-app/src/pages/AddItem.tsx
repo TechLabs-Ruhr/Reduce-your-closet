@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
 import Navbar from "../components/Navbar(userloged)"
+import '../CSS/AddItem.css'
 
 
 const AddItem = () => {

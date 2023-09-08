@@ -1,4 +1,5 @@
 const HowItWorks = () => {
+  
     return (
     <div className="howitworks"> 
       <h2> HOW IT WORKS? </h2>
@@ -14,11 +15,8 @@ const HowItWorks = () => {
         <p> 2. Track Your Clothes </p>
         <p> 3. Check What You Wear Most </p>
       </div>
-  
-  
     </div>
-  
-    )
-}
+  );
+};
  
   export default HowItWorks

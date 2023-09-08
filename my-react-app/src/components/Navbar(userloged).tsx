@@ -16,8 +16,7 @@ const Navbar = () => {
         <Link to="/mystatistics"> MY STATISTICS</Link>
         </li>
         </div>
-  
-    )
-}
+  );
+};
 
 export default Navbar

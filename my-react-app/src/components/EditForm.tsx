@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const EditForm = ({ item }) => {
 
-
   const [showEditForm, setShowEditForm] = useState(false);
   const [editedItem, setEditedItem] = useState({
     color: '',
@@ -36,7 +35,7 @@ const EditForm = ({ item }) => {
       editedItem.brand = item.brand
     }
     console.log(editedItem);
-    dispatch({type: 'EDIT_ITEM', editedItem: {
+   ({type: 'EDIT_ITEM', editedItem: {
         type: item.type,
         id: item.id,
         color: editedItem.color,
@@ -64,9 +63,9 @@ const EditForm = ({ item }) => {
           <button className="confirmbutton" type='submit'>CONFIRM</button>
         </form>)
         : null}
-        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default EditForm;

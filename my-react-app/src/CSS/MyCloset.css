@@ -27,7 +27,7 @@ padding: 130px 30px 20px 20px;
 color: #161616;
 font-size: 40px;
 font-weight: 700;
-line-height: 48px; /* 120% */
+line-height: 48px;
 }
 
 .MyCloset h3 {
@@ -54,7 +54,7 @@ margin:5px 20px;
 }
 
 
-fieldset{
+fieldset {
 padding: 10px;
 margin:5px 20px;
 width: 124px;
@@ -80,22 +80,21 @@ letter-spacing: 0.8px;
 
 
 #datepicker input {
-    width: 70px;   
-    font-size: 55%;
-    border-radius: 8px;
+width: 70px;   
+font-size: 55%;
+border-radius: 8px;
 }
 
-#datepicker button
-{
-    width: 40px;
-    border-radius: 8px;
-    margin-left: 5px;
-    background: #E3B881;
-    color: var(--blackish, #2E2B2B);
-    font-size: 8px;
-    font-weight: 700;
-    line-height: 13px;
-    letter-spacing: 0.5px;
+#datepicker button {
+width: 40px;
+border-radius: 8px;
+margin-left: 5px;
+background: #E3B881;
+color: var(--blackish, #2E2B2B);
+font-size: 8px;
+font-weight: 700;
+line-height: 13px;
+letter-spacing: 0.5px;
 }
 
 
