@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar(userloged)"
 import { Link } from "react-router-dom"
-import '../CSS/SignIn.css'
+import '../CSS/EmptyCloset.css'
 
 const MyClosetEmpty = () => {
   const [authenticated, setauthenticated] = useState(null);
@@ -9,12 +9,8 @@ const MyClosetEmpty = () => {
     const loggedInUser = localStorage.getItem("authenticated");
     if (loggedInUser) {
       setauthenticated(loggedInUser);
-     
-      
     }
   }, []);
-
-
 
     return (
 
@@ -29,9 +25,8 @@ const MyClosetEmpty = () => {
           <Link to="/additem"> <button>CREATE YOUR CLOSET</button></Link>
           </div>
         </div>
-      </div>
-     
+      </div> 
     );
-  }
+  };
 
 export default MyClosetEmpty

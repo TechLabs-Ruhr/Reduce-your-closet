@@ -4,13 +4,13 @@
   
   body {
     width: 1440px;
-    margin: auto;
+    height: 850px;
+    border: solid #ffffff;
   }
 
   .faq h3, 
   .mystatistics h3,
   .myprofile h3,
   .contact h3 {
-    
     padding: 130px 30px 20px 20px;
-}
+  }

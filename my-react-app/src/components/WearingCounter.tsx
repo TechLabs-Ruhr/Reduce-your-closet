@@ -1,4 +1,5 @@
-import {useState, useRef } from 'react'
+import {useState} from 'react'
+import '../CSS/MyCloset.css'
  
 function WearingCounter() {
   const setCounter = useState(0);
@@ -15,29 +16,26 @@ function WearingCounter() {
       setShowDatePicker(false) : setShowDatePicker(true)
   }
     const [date, setDate] = useState('');
-    const dateInputRef = useRef(null);
   
     const handleChange = (e) => {
       setDate(e.target.value);
     };
-  
- 
+
   return (
     <div className="counter">
-      <div className="btn__container">
-      <button onClick={() => toggleDatePicker()}> MARK AS WORN </button>
+      <div className="buttonContainer">
+      <button className='ClosetButtons' onClick={() => toggleDatePicker()}> MARK AS WORN </button>
       </div>
-      <div className='datepicker'>
+      <div id='datepicker'>
       { showDatePicker?
-        ( <input
-          type="date"
-          onChange={handleChange}
-          ref={dateInputRef}
-        /> )
+        ( <form onChange={handleChange}>
+            <input type="date" />
+            <button id="'SubmitButton" type='submit'> Submit </button>  
+        </form> )
         : null}
         </div>
     </div>
   );
-}
+};
 
 export default WearingCounter

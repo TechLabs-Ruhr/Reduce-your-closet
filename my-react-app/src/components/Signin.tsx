@@ -54,24 +54,6 @@ const requestOptions = {
             console.log(err.message);
         setErrorMessages({ name: "uname", message: err.message });
          });
-
-    // u dont really need this now :)
-
-    // Find user login info
-    // const userData = database.find((user) => user.username === uname.value);
-
-    // // Compare user info
-    // if (userData) {
-    //   if (userData.password !== pass.value) {
-    //     // Invalid password
-    //     setErrorMessages({ name: "pass", message: errors.pass });
-    //   } else {
-    //     setIsSubmitted(true);
-    //   }
-    // } else {
-    //   // Username not found
-    //   setErrorMessages({ name: "uname", message: errors.uname });
-    // }
   };
 
   // Generate JSX code for error message

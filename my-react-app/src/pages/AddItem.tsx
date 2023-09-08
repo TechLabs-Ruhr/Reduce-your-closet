@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
 import Navbar from "../components/Navbar(userloged)"
+import '../CSS/AddItem.css'
+
 
 const AddItem = () => {
   const [typeOfItem, setTypeOfItem] = useState('');
@@ -10,13 +12,12 @@ const AddItem = () => {
   }
 
   return (
-    <div className='addItem'>
-          <div className="navbar(userloged)"> 
-           <Navbar />
-          </div>
-      <h2>Add a new item to your wardrobe</h2>
+    <div className='AddItem'>
+        <Navbar />
+        <h2 id ='AddItemTitle'>Add a new item to your SMARTROBE </h2>
+
       <select className='select' onChange={handleTypeChange}>
-        <option value="">Type of item</option>
+        <option value="">Please choose category</option>
         <option value="top">TOPS</option>
         <option value="bottom">BOTTOMS</option>
         <option value="shoes">SHOES</option>
@@ -25,14 +26,15 @@ const AddItem = () => {
         <option value="bag">BAGS</option>
 
       </select>
-      {(typeOfItem === '' && <div className='feedback'><p>You must choose a type...</p></div>)}
+      
       {(typeOfItem === 'top' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'bottom' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'shoes' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'outwear' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'accesorie' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'bag' && <ItemForm typeOfItem={typeOfItem} />)}
-    </div>
+      
+   </div>
   );
 }
 

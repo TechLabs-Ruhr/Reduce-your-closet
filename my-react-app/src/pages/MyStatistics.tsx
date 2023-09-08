@@ -4,6 +4,7 @@ import '../CSS/PagesInProgress.css'
 function MyStatistics() {
 
     return (
+      
     <div className="navbar(userloged)"> 
       <Navbar />
         <div className = 'mystatistics'>
