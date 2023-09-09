@@ -4,7 +4,6 @@ const UploadImage = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
-
   return (
     <div className="Upload">
       <h4> Upload Image </h4>

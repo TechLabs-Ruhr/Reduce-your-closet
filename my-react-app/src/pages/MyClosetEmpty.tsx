@@ -13,7 +13,6 @@ const MyClosetEmpty = () => {
   }, []);
 
     return (
-
       <div>
       <div className="navbar(userloged)"> 
         <Navbar2 />
