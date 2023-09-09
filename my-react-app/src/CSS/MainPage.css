@@ -9,17 +9,19 @@ body {
 }
 
 /*Nav css */
+  #logo {
+  width: 135px;
+  height: 75px;
+  flex-shrink: 0;
+  margin: 10px;
+  }
 
-#logo {
-  width: 149px;
-  height: 95px;
-  padding-left: 40px;
-  padding-top:10px;
-}
 
 .navbar {
+  display: flex;
   width: 1440px;
-  height: 110px;
+  height: 90px;
+  align-items: center;
   flex-shrink: 0;
   border: 2px solid #797070;
   background-color: #2D261E;
@@ -28,6 +30,11 @@ body {
   z-index: 100;
 }
 
+#navContainer {
+  position: absolute;
+  right: 60px;
+  bottom: 19px;
+}
 
 .navbar li {
   color:#E6E6E6;
@@ -53,7 +60,7 @@ a {
 #banner {
   width: 1440px;
   height: 800px;
-  padding-top: 110px;
+  margin-top: 90px;
 }
 
 .bannertext  {
@@ -110,8 +117,8 @@ a {
 
 .howitworks h2,
 .signin h2 {
+  padding: 25px;
   text-align: center;
-  padding: 30px;
   color: var(--blackish, #2E2B2B);
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 40px;
@@ -124,9 +131,9 @@ a {
 
 .howitworks {
   width: 1440px;
-  height: 450px;
+  height: 500px;
   background-color: #F5F5F5;
-  margin-top: -40px;
+  margin-top: -35px;
 }
 
 .images,
@@ -170,12 +177,13 @@ a {
 
 .register {
   width: 1440px;
-  height: 630px;
+  height: 700px;
   background-color: #E0B57E;
    
 
 }
 .form-container h3 {
+  padding: 20px;
   color: #2E2B2B;
   text-align: center;
   font-family: Inter;
