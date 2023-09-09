@@ -22,6 +22,7 @@ function MainPage() {
     <>
       <div className="navbar">
       <img src="Logo/logowhite.png" alt="logo" id='logo'></img>
+      <div id='navContainer'>
         <li onClick={() => scrollToSection(home)} className="link" >
           HOME
          </li>
@@ -34,6 +35,7 @@ function MainPage() {
           <li>
           <Link to="/signin"> SIGN IN</Link>
           </li>
+          </div>
       </div>
       
       <div className="MainPage">

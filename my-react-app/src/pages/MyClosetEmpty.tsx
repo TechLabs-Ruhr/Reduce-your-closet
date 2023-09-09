@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Navbar from "../components/Navbar(userloged)"
+import Navbar2 from "../components/Navbar(userloged)"
 import { Link } from "react-router-dom"
 import '../CSS/EmptyCloset.css'
 
@@ -16,7 +16,7 @@ const MyClosetEmpty = () => {
 
       <div>
       <div className="navbar(userloged)"> 
-        <Navbar />
+        <Navbar2 />
       </div>
         <div className="emptycloset">
           <img src="PicturesCloset/EmptyCloset.png" alt="emptycloset" id='emptycloset'></img>

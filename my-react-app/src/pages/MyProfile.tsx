@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar(userloged)"
+import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/PagesInProgress.css'
 
 function MyProfile() {
 
     return (
         <div className="navbar(userloged)"> 
-          <Navbar />
+          <Navbar2 />
             <div className = 'myprofile'>
               <h3>My Profile (page in progress) </h3>                           
             </div>

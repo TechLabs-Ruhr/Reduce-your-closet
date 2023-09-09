@@ -1,13 +1,15 @@
 .login{
     width: 1440px;
-    height: 450px;
-    background-color: #E0B57E;
+    height: 500px;
+    background-color: #ffffff;
   }
   
   .login-form {
-    background-color: #E0B57E;
-    width:700px;
+    background-color: #ffffff;
+    width:720px;
     height: 300px;
+    flex-shrink: 0;
+    float: left;
   }
   
   input[type="text"],
@@ -48,7 +50,7 @@
   
   .form {
     flex-shrink: 0;
-    background-color: #E0B57E;
+    background-color: #ffffff;
    
   }
   
@@ -93,7 +95,7 @@
   }
   
   .login-form {
-    background-color:  #E0B57E;
+    background-color: #ffffff;
     float: left;
     padding: 2rem;
   }
@@ -137,5 +139,4 @@
       line-height: 24px; /* 120% */
       letter-spacing: 0.8px;
       cursor: pointer;
-    
-  }
+    }

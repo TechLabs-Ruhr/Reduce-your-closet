@@ -85,20 +85,23 @@ const requestOptions = {
   );
 
   return (
+    <>
     <div className="login">
       <div className="login-form">
           <Link to="/" > 
             <button className="homepagebutton"> GO BACK TO HOMEPAGE </button> 
           </Link>
           <br></br>  
+          <br></br> 
             <div className="title">SIGN IN</div>
               <div className="form">
                 <div className="button-container">
                 {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-              </div>
-            </div>
-        </div>
-      </div>
+                </div>
+             </div>
+           </div>
+    </div>
+  </>
   );
 }
 

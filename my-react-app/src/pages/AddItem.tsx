@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
-import Navbar from "../components/Navbar(userloged)"
+import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/AddItem.css'
 
 
@@ -13,7 +13,7 @@ const AddItem = () => {
 
   return (
     <div className='AddItem'>
-        <Navbar />
+        <Navbar2 />
         <h2 id ='AddItemTitle'>Add a new item to your SMARTROBE </h2>
 
       <select className='select' onChange={handleTypeChange}>
