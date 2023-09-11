@@ -26,11 +26,9 @@ function Signin() {
     pass: "invalid password"
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:any) => {
     //Prevent page reload
     event.preventDefault();
-
-    var { uname, pass } = document.forms[0];
 
 const requestOptions = {
         method: 'POST',
@@ -56,8 +54,10 @@ const requestOptions = {
          });
   };
 
+
+
   // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
+  const renderErrorMessage = (name:any) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );

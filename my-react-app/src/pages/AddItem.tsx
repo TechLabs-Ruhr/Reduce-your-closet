@@ -7,7 +7,7 @@ import '../CSS/AddItem.css'
 const AddItem = () => {
   const [typeOfItem, setTypeOfItem] = useState('');
 
-  const handleTypeChange = e => {
+  const handleTypeChange = (e:any) => {
     setTypeOfItem(e.target.value);
   }
 

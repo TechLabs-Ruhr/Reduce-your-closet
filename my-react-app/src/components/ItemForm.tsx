@@ -1,40 +1,33 @@
 import { useState} from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import UploadImage from '../components/UploadImage'
 
-const ItemForm = ({ typeOfItem }) => {
+
+const ItemForm = ({typeOfItem}) => {
+  
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
   const [setFeedback] = useState(null);
 
 
-  const handleDescChange = e => {
+  const handleDescChange = (e:any) => {
     setDescription(e.target.value);
   }
-  const handleColorChange = e => {
+  const handleColorChange = (e:any) => {
     setColor(e.target.value);
   }
-  const handleBrandChange = e => {
+  const handleBrandChange = (e:any) => {
     setBrand(e.target.value);
   }
-  const handleSubmit = e => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
 
     if(description === '' || color === '' || brand === ''){
       setFeedback
       setTimeout(() => {
-        setFeedback(null);
+        setFeedback;
       }, 3000)
-    } else {
-      const newItem = {
-        type: typeOfItem,
-        description,
-        color,
-        brand,
-        id: uuidv4()
-      }
-    }
+    } 
   }
 
   return (

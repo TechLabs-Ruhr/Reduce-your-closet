@@ -11,7 +11,7 @@ function MainPage() {
   const register = useRef(null);
 
 
-  const scrollToSection = (elementRef) => {
+  const scrollToSection = (elementRef:any) => {
     window.scrollTo({
       top: elementRef.current.offsetTop,
       behavior: "smooth",

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const EditForm = ({ item }) => {
-
+const EditForm = ({ item }) => { 
+  
   const [showEditForm, setShowEditForm] = useState(false);
   const [editedItem, setEditedItem] = useState({
     color: '',
@@ -9,21 +9,23 @@ const EditForm = ({ item }) => {
     description: ''
   });
 
+  
+
   const toggleEditForm = () => {
     showEditForm ?
       setShowEditForm(false) : setShowEditForm(true)
   }
-  const handleDescChange = e => {
+  const handleDescChange = (e:any) => {
     setEditedItem({...editedItem, description: e.target.value});
   }
-  const handleColorChange = e => {
+  const handleColorChange = (e:any) => {
     setEditedItem({...editedItem, color: e.target.value});
   }
-  const handleBrandChange = e => {
+  const handleBrandChange = (e:any) => {
     setEditedItem({...editedItem, brand: e.target.value});
   }
 
-  const handleEditSubmit = e => {
+  const handleEditSubmit = (e:any) => {
     e.preventDefault();
     if(editedItem.description === '') {
       editedItem.description = item.description

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const UploadImage = () => {
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   return (
     <div className="Upload">
@@ -21,6 +21,7 @@ const UploadImage = () => {
         type="file"
         name="myImage"
         onChange={(event) => {
+          if (!event.target.files) return;
           console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
         }}
