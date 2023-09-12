@@ -2,6 +2,7 @@ import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/PagesInProgress.css'
 
 const FAQ = () => {
+  document.documentElement.scrollTop = 0;
   return (
     <div className="navbar(userloged)"> 
       <Navbar2 />

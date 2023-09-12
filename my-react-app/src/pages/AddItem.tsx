@@ -5,6 +5,8 @@ import '../CSS/AddItem.css'
 
 
 const AddItem = () => {
+  document.documentElement.scrollTop = 0;
+  
   const [typeOfItem, setTypeOfItem] = useState('');
 
   const handleTypeChange = (e:any) => {

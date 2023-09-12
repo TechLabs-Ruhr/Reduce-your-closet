@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import '../CSS/EmptyCloset.css'
 
 const MyClosetEmpty = () => {
+  document.documentElement.scrollTop = 0;
   
     return (
       <div>

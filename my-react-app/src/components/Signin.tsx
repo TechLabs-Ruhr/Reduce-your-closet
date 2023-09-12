@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import '../CSS/SignIn.css'
 
 function Signin() {
+  document.documentElement.scrollTop = 0;
+  
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,7 +32,7 @@ function Signin() {
     //Prevent page reload
     event.preventDefault();
 
-const requestOptions = {
+/*const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({username: 'acutalusername', password: 'actualpassword'})
@@ -51,8 +53,8 @@ const requestOptions = {
          .catch((err) => {
             console.log(err.message);
         setErrorMessages({ name: "uname", message: err.message });
-         });
-  };
+        //  }); */
+  }; 
 
 
 
@@ -80,6 +82,8 @@ const requestOptions = {
           <input type="submit" />
         </div>
       </form>
+
+      
 
     </div>
   );

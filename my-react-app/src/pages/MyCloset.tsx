@@ -6,6 +6,7 @@ import '../CSS/MyCloset.css'
 import { Link } from "react-router-dom"
 
 const MyCloset = () => {
+  document.documentElement.scrollTop = 0;
 
   const clothes = [
       {
