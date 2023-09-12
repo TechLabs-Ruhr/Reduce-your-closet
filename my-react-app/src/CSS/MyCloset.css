@@ -5,7 +5,7 @@ font-family: 'Inter', sans-serif;
 
 .MyCloset {
 width: 1440px;
-height: 1000px;
+height: 1080px;
 margin: auto;
 border: solid #ffffff;
 }
@@ -66,6 +66,12 @@ background: #D9D9D9;
 border: white;
 }
 
+#items-container p {
+    font-size: 11px;
+   
+}
+
+
 .ClosetButtons {
 width: 124px;
 margin-bottom: 5px;
@@ -87,8 +93,8 @@ border-radius: 8px;
 }
 
 #datepicker button {
-width: 40px;
-border-radius: 8px;
+width: 45px;
+border-radius: 6px;
 margin-left: 5px;
 background: #E3B881;
 color: var(--blackish, #2E2B2B);

@@ -6,7 +6,8 @@ const EditForm = ({ item }) => {
   const [editedItem, setEditedItem] = useState({
     color: '',
     brand: '',
-    description: ''
+    description: '',
+    price: ''
   });
 
   
@@ -24,6 +25,9 @@ const EditForm = ({ item }) => {
   const handleBrandChange = (e:any) => {
     setEditedItem({...editedItem, brand: e.target.value});
   }
+  const handlePriceChange = (e:any) => {
+    setEditedItem({...editedItem, price: e.target.value});
+  }
 
   const handleEditSubmit = (e:any) => {
     e.preventDefault();
@@ -36,13 +40,17 @@ const EditForm = ({ item }) => {
     if(editedItem.brand === '') {
       editedItem.brand = item.brand
     }
+    if(editedItem.price === '') {
+      editedItem.price = item.price
+    }
     console.log(editedItem);
    ({type: 'EDIT_ITEM', editedItem: {
         type: item.type,
         id: item.id,
         color: editedItem.color,
         brand: editedItem.brand,
-        description: editedItem.description
+        description: editedItem.description,
+        price: editedItem.price
     }
     });
     toggleEditForm();
@@ -62,6 +70,8 @@ const EditForm = ({ item }) => {
           <input type='text' placeholder={item.color} onChange={handleColorChange}/>
           <label>Brand</label>
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
+          <label>Price in €</label>
+          <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           <button className="confirmbutton" type='submit'>CONFIRM</button>
         </form>)
         : null}
