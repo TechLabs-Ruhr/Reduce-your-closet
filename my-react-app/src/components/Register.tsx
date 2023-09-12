@@ -44,7 +44,7 @@ function Register() {
     }
   
 
-    const config = {
+    /*const config = {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -67,7 +67,7 @@ function Register() {
 
         console.log(errorMessages);
         setErrorMessages({ name: "email", message: errorMessages });
-         });
+         }); */
   
 
   return (
