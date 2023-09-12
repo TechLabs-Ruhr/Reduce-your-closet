@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import '../CSS/SignIn.css'
 
 function Signin() {
+  document.documentElement.scrollTop = 0;
+  
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -26,13 +28,11 @@ function Signin() {
     pass: "invalid password"
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:any) => {
     //Prevent page reload
     event.preventDefault();
 
-    var { uname, pass } = document.forms[0];
-
-const requestOptions = {
+/*const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({username: 'acutalusername', password: 'actualpassword'})
@@ -53,11 +53,13 @@ const requestOptions = {
          .catch((err) => {
             console.log(err.message);
         setErrorMessages({ name: "uname", message: err.message });
-         });
-  };
+        //  }); */
+  }; 
+
+
 
   // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
+  const renderErrorMessage = (name:any) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
@@ -80,6 +82,8 @@ const requestOptions = {
           <input type="submit" />
         </div>
       </form>
+
+      
 
     </div>
   );

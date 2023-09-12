@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react"
 import Navbar2 from "../components/Navbar(userloged)"
 import { Link } from "react-router-dom"
 import '../CSS/EmptyCloset.css'
 
 const MyClosetEmpty = () => {
-  const [authenticated, setauthenticated] = useState(null);
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("authenticated");
-    if (loggedInUser) {
-      setauthenticated(loggedInUser);
-    }
-  }, []);
-
+  document.documentElement.scrollTop = 0;
+  
     return (
       <div>
       <div className="navbar(userloged)"> 

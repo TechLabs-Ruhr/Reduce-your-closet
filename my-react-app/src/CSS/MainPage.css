@@ -2,6 +2,11 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   height: 100vh;
   width: 1440px;

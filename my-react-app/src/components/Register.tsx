@@ -12,7 +12,7 @@ function Register() {
 
   const [errorMessages, setErrorMessages] = useState({});
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event:any) => {
     
     event.preventDefault();
 
@@ -23,15 +23,11 @@ function Register() {
     }));
   };
 
-  const errors = {
-    email: "invalid email",
-  };
-
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     if (values.firstName && values.lastName && values.email && values.pass) {
       setValid(true);
@@ -47,12 +43,8 @@ function Register() {
       setAgree(!agree);
     }
   
-    // When the button is clicked
-    const btnHandler = () => {
-      alert('The buttion is clickable!');
-    };
 
-    const config = {
+    /*const config = {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -75,7 +67,7 @@ function Register() {
 
         console.log(errorMessages);
         setErrorMessages({ name: "email", message: errorMessages });
-         });
+         }); */
   
 
   return (

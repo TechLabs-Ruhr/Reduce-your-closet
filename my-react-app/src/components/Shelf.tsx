@@ -9,11 +9,12 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
     <div id='itemslist'>
       {itemList.map( item => (
         
-        <div id='items container'>
+        <div id='items-container'>
         <fieldset key={item.id}>
-            <p> {item.description} </p>
-            <p> {item.color} </p>
-            <p> {item.brand} </p>
+            <p> Description: {item.description} </p>
+            <p> Color: {item.color} </p>
+            <p> Brand: {item.brand} </p>
+            <p> Price: {item.price} €</p>
         </fieldset>
         
    

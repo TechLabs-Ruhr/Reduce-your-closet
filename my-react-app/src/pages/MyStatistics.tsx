@@ -2,6 +2,7 @@ import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/PagesInProgress.css'
 
 function MyStatistics() {
+  document.documentElement.scrollTop = 0;
 
     return (
       

@@ -13,6 +13,7 @@ const MyCloset = () => {
         color: 'red',
         brand: 'stradivarius',
         description: 'blouse',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -20,6 +21,7 @@ const MyCloset = () => {
         color: 'green',
         brand: 'HM',
         description: 'tshirt',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -27,6 +29,7 @@ const MyCloset = () => {
         color: '',
         brand: '',
         description: 'trausers',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -34,6 +37,7 @@ const MyCloset = () => {
         color: '',
         brand: '',
         description: 'boots',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -41,6 +45,7 @@ const MyCloset = () => {
         color: '',
         brand: '',
         description: 'jacket',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -48,6 +53,7 @@ const MyCloset = () => {
         color: '',
         brand: '',
         description: 'earings',
+        price: '20',
         id: uuidv4()
       },
       {
@@ -55,6 +61,7 @@ const MyCloset = () => {
         color: '',
         brand: '',
         description: 'small bag',
+        price: '20',
         id: uuidv4()
       }
     ];
