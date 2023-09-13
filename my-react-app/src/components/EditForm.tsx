@@ -43,6 +43,11 @@ const EditForm = ({ item }) => {
     if(editedItem.price === '') {
       editedItem.price = item.price
     }
+
+//Edit form, 
+//User should be able to EDIT existing items description, color, brand and price on Click 'confirm' button, items id stays unchanged
+//HTTP PATCH(!?) Request Method
+
     console.log(editedItem);
    ({type: 'EDIT_ITEM', editedItem: {
         type: item.type,
@@ -72,6 +77,7 @@ const EditForm = ({ item }) => {
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
           <label>Price in €</label>
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
+          {/* CONFIRM BUTTON */}
           <button className="confirmbutton" type='submit'>CONFIRM</button>
         </form>)
         : null}

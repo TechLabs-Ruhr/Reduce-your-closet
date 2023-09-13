@@ -1,6 +1,7 @@
 import { useState} from 'react'
 import UploadImage from '../components/UploadImage'
 
+// Add Your Item Form 
 
 const ItemForm = ({typeOfItem}) => {
   
@@ -21,7 +22,7 @@ const ItemForm = ({typeOfItem}) => {
     setBrand(e.target.value);
   }
   const handlePriceChange = (e:any) => {
-    setBrand(e.target.value);
+    setPrice(e.target.value);
   }
   const handleSubmit = (e:any) => {
     e.preventDefault();
@@ -34,9 +35,18 @@ const ItemForm = ({typeOfItem}) => {
     } 
   }
 
+//User should be able to ADD NEW ITEM to database, adding its description, color, brand and price 
+// on Click 'create' button, items should be saved
+// on Click 'cancel' button, changes made by user should be canceled
+//item should get own ID and be displayed in 'MY CLOSET' page. 
+//HTTP POST Request Method
+
+
+
   return (
     <div className='itemFormContainer'>
        <div id='uploadImage'>
+        {/* Page contains also UPLOAD IMAGE form, for this element check UploadImage.tsx file from folder 'components' */}
         <UploadImage/>
        </div>
       <form onSubmit={handleSubmit}>
@@ -61,8 +71,9 @@ const ItemForm = ({typeOfItem}) => {
           <br />
 
           <input name="price" type="text" placeholder="Price..." onChange={handlePriceChange} required />
-          
+            {/* CREATE BUTTON */}
           <button id="create" type="submit"> CREATE </button>
+            {/* CANCEL BUTTON */}
           <button id="cancel"> CANCEL </button>
          </div>
       </form>

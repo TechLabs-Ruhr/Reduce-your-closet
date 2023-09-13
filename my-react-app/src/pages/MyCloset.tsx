@@ -7,6 +7,8 @@ import { Link } from "react-router-dom"
 
 const MyCloset = () => {
 
+//Data i created just to check how it displays :) This is what i couldnt share yesterday (Ayman)
+
   const clothes = [
       {
         type: 'top',
@@ -67,6 +69,9 @@ const MyCloset = () => {
     ];
 
 
+    //clothes categories filtered to display accordingly
+
+
   const top = clothes.filter(item => item.type === 'top');
   const bottom = clothes.filter(item => item.type === 'bottom');
   const shoes = clothes.filter(item => item.type === 'shoes');
@@ -88,7 +93,8 @@ const MyCloset = () => {
           <Link to="/additem"><button id='additem'>ADD ITEM</button> </Link>
         </h2> 
       </div>
-
+    
+       {/* ITEMS ADDED BY USER DIPLAY HERE */}
         <div onClick={() => setItemToShow('top')}> <h3> TOPS </h3>
           {itemToShow === 'top' && <div> <Shelf itemList={top} /> </div>}
         </div>

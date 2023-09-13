@@ -4,6 +4,8 @@ import '../CSS/EmptyCloset.css'
 
 const MyClosetEmpty = () => {
   document.documentElement.scrollTop = 0;
+
+  //This page is supposed to appear only if user didnt add any items to the closet
   
     return (
       <div>
