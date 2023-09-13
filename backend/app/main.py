@@ -51,10 +51,9 @@ class PieceType(BaseModel):
 def read_root():
 	return {'App is': 'running'}
 
-@app.post('/createPiece')
+@app.post('/additem/create')
 async def create_Piece(piece: PieceType):
-	test = Piece(piece)
-	return test
+	return 
 
 
 @app.get("/clth/{id}")
