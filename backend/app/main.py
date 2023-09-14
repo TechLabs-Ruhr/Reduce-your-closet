@@ -73,7 +73,7 @@ async def getClothes(user: Signup):
   return get_clothes(user)
 
 @app.post('/add_cloth')
-async def addClothes(user: Signup, cloth:Clothes)
+async def addClothes(user: Signup, cloth:Piece)
  if user.password == 'Test123':
   return add_clothes(user, cloth)
 
