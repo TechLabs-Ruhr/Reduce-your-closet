@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from crud import get_clothes, add_clothes, update_clothes, delete_clothes
 
 app = FastAPI()
 
@@ -65,3 +66,27 @@ async def login(user: Signup):
 	if user.password == 'Test123!':
 		return 'OK'
 	return 'REJECT',401
+
+@app.get('/get_clothes')
+async def getClothes(user: Signup):
+ if user.password == 'Test123':
+  return get_clothes(user)
+
+@app.post('/add_cloth')
+async def addClothes(user: Signup, cloth:Clothes)
+ if user.password == 'Test123':
+  return add_clothes(user, cloth)
+
+@app.put('/update_cloth/{cloth_id}')
+async def updateClothes(user: Signup, cloth_id: string)
+ if user.password == 'Test123':
+  return update_clothes(user, cloth_id)
+
+@app.delete('/delete_cloth/{cloth_id}')
+async def deleteClothes(user: Signup,
+cloth_id: string)
+ if user.password == 'Test123':
+  return delete_clothes(user, cloth_id)
+
+
+
