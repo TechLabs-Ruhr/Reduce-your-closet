@@ -1,5 +1,6 @@
 # A "schema" is a definition or description of something. Not the code that implements it, but just an abstract description used to check typing
 from pydantic import BaseModel
+from enum import Enum
 
 class Category(str, Enum):
     top = 'top'
