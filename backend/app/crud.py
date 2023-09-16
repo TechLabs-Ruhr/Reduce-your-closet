@@ -13,3 +13,30 @@ def create_piece(db: Session, piece: schemas.Piece):
 	db.commit()
 	db.refresh(db_piece)
 	return db_piece
+
+
+def update_cloth(db: Session, piece: schemas.Piece):
+    db_piece = db.query(models.Piece).filter(models.Piece.id == piece.id).first()
+
+    if db_piece:
+        for key, value in piece.dict().items():
+            setattr(db_piece, key,value)
+
+
+        db.commit()
+        db.refresh(db_piece)
+
+
+
+def delete_cloth(db: Session, piece: schemas.Piece):
+    
+    db_piece = db.query(models.Piece).filter(models.Piece.id == piece.id).first()
+
+    if db_piece:
+        db.delete(db_piece)
+        db.commit()
+
+        
+        return "Piece deleted successfully"
+    else:
+        return "Piece not found"
