@@ -48,15 +48,13 @@ async def get_clth(id:int, db: Session = Depends(get_db)):
 #  if user.password == 'Test123':
 #   return add_clothes(user, cloth)
 
-# @app.put('/update_cloth/{cloth_id}')
-# async def updateClothes(user: Signup, cloth_id: string)
-#  if user.password == 'Test123':
-#   return update_clothes(user, cloth_id)
+@app.put('/update_piece/{piece_id}')
+async def updateClothes(db: Session = Depends(get_db), piece_id: string)
+ return update_clothes(user, piece_id)
 
-# @app.delete('/delete_cloth/{cloth_id}')
-# async def deleteClothes(user: Signup, cloth_id: string)
-#  if user.password == 'Test123':
-#   return delete_clothes(user, cloth_id)
+@app.delete('/delete_piece/{piece_id}')
+async def deleteClothes(db: Session = Depends(get_db), piece_id: string)
+ return delete_clothes(user, cloth_id)
 
 # # Not necessary in MVP!
 # @app.post('/signin')
