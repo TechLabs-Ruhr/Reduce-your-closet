@@ -50,11 +50,11 @@ async def get_clth(id:int, db: Session = Depends(get_db)):
 
 @app.put('/update_piece/{piece_id}')
 async def updateClothes(db: Session = Depends(get_db), piece: schemas.Piece):
- return update_clothes(db, piece)
+ return crud.update_clothes(db, piece)
 
 @app.delete('/delete_piece/{piece_id}')
 async def deleteClothes(db: Session = Depends(get_db), piece : schemas.Piece)
- return delete_clothes(db, piece)
+ return crud.delete_clothes(db, piece)
 
 # # Not necessary in MVP!
 # @app.post('/signin')
