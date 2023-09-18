@@ -5,3 +5,7 @@ pydantic
 
 # db
 SQLAlchemy==1.4.27
+
+# statistics
+numpy
+pandas
