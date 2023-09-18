@@ -2,9 +2,15 @@ import DeleteButton from "./DeleteButton"
 import EditForm from './EditForm'
 import WearingCounter from "./WearingCounter"
 import '../CSS/MyCloset.css'
+import { Piece } from '../types'
 
 
-const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted = true}) => {
+const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted = true}: {
+  itemList: Piece[],
+  canBeDeleted?: boolean,
+  canBeEdited?: boolean,
+  canBeCounted?: boolean
+}) => {
 
 
 // 'Shelf' element

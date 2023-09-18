@@ -1,72 +1,93 @@
 import Shelf from '../components/Shelf'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4} from 'uuid'
 import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/MyCloset.css'
 import { Link } from "react-router-dom"
+import { Piece } from '../types'
 
 const MyCloset = () => {
 
 //Data i created just to check how it displays :) This is what i couldnt share yesterday (Ayman)
 
-  const clothes = [
+  const clothesDummy: Piece[] = [
       {
         type: 'top',
         color: 'red',
         brand: 'stradivarius',
         description: 'blouse',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'top',
         color: 'green',
         brand: 'HM',
         description: 'tshirt',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'bottom',
         color: '',
         brand: '',
         description: 'trausers',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'shoes',
         color: '',
         brand: '',
         description: 'boots',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'outwear',
         color: '',
         brand: '',
         description: 'jacket',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'accesorie',
         color: '',
         brand: '',
         description: 'earings',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       },
       {
         type: 'bag',
         color: '',
         brand: '',
         description: 'small bag',
-        price: '20',
-        id: uuidv4()
+        price: 20,
+        id: 1
       }
     ];
+
+    // define type for cloth item
+
+
+    // use react use-effect hook to fetch all clothes from REST-API
+    const [clothes, setClothes] = useState<Piece[]>([]);
+    
+    useEffect(() => {
+      // fetch("http://localhost:8080/clothes")
+      // .then(response => response.json())
+      // .then(data => {
+      //   setClothes(data);
+      // })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      // });
+
+      setClothes(clothesDummy);
+
+    })
 
 
     //clothes categories filtered to display accordingly
