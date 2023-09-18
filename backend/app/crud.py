@@ -4,6 +4,9 @@ from . import models, schemas
 def get_piece(db: Session, id: int):
 	return db.query(models.Piece).filter(models.Piece.id == id).first()
 
+def get_piece_all(db: Session):
+    return db.query(models.Piece).all()
+
 def get_by_category(db: Session, category: str):
 	return db.query(models.Piece).filter(models.Piece.category == category)
 

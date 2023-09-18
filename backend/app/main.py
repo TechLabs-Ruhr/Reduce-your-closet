@@ -33,6 +33,10 @@ def read_root():
 async def create_piece(piece: schemas.PiceCreate, db: Session = Depends(get_db)):
 	return crud.create_piece(db = db, piece = piece)
 
+@app.get('/clth/all')
+async def get_pieces(db: Session = Depends(get_db)):
+	return crud.get_piece_all(db = db)
+
 @app.get("/clth/{id}")
 async def get_clth(id:int, db: Session = Depends(get_db)):
 	return crud.get_piece(db = db, id = id)
