@@ -36,8 +36,8 @@ class Size(str, Enum):
     xl = 'xl'
     xxl = 'xxl'
 
-class Piece(BaseModel):
-    id: int
+
+class PieceBase(BaseModel):
     category: Category
     price: float
     color: Colors
@@ -51,3 +51,9 @@ class Piece(BaseModel):
 
     class Config:
     	orm_mode = True
+
+class PiceCreate(PieceBase):
+    pass
+
+class Piece(PieceBase):
+    id: int

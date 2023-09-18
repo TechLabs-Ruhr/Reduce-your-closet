@@ -30,7 +30,7 @@ def read_root():
 	return {'App is': 'running'}
 
 @app.post('/additem/create')
-async def create_piece(piece: schemas.Piece, db: Session = Depends(get_db)):
+async def create_piece(piece: schemas.PiceCreate, db: Session = Depends(get_db)):
 	return crud.create_piece(db = db, piece = piece)
 
 @app.get("/clth/{id}")

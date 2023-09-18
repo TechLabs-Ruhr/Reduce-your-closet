@@ -7,7 +7,7 @@ def get_piece(db: Session, id: int):
 def get_by_category(db: Session, category: str):
 	return db.query(models.Piece).filter(models.Piece.category == category)
 
-def create_piece(db: Session, piece: schemas.Piece):
+def create_piece(db: Session, piece: schemas.PiceCreate):
 	db_piece = models.Piece(**piece.dict())
 	db.add(db_piece)
 	db.commit()

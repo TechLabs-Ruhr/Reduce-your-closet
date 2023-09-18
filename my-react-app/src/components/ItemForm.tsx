@@ -8,8 +8,8 @@ const ItemForm = ({typeOfItem}) => {
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
-  const [price, setPrice] = useState('');
-  const [setFeedback] = useState(null);
+  const [price, setPrice] = useState(0.0);
+  const [feedback, setFeedback] = useState('');
 
 
   const handleDescChange = (e:any) => {
@@ -27,12 +27,34 @@ const ItemForm = ({typeOfItem}) => {
   const handleSubmit = (e:any) => {
     e.preventDefault();
 
-    if(description === '' || color === '' || brand === '' || price === ''){
-      setFeedback
-      setTimeout(() => {
-        setFeedback;
-      }, 3000)
-    } 
+    if(description === '' || color === '' || brand === '' || price === 0.0){
+      setFeedback("Please fill in all fields");
+    } else {
+      // HTTP POST to Backend to create a new item
+      const data = {notes: description, color, brand, price, size: 'm', category: typeOfItem};
+      fetch("http://localhost:8080/additem/create", {
+          method: 'POST', 
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data), 
+      })
+      // check for status code and terminate if not 201
+      .then(response => {
+          if(response.status !== 200){
+              throw new Error("HTTP status code not 201");
+          } else {
+            return response.json();
+          }
+      })
+      .then(data => {
+          setFeedback("Item successfully added");
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+          setFeedback("Something went wrong, please try again");
+      });
+    }
   }
 
 //User should be able to ADD NEW ITEM to database, adding its description, color, brand and price 
@@ -70,7 +92,9 @@ const ItemForm = ({typeOfItem}) => {
           <label>Price in € </label>
           <br />
 
-          <input name="price" type="text" placeholder="Price..." onChange={handlePriceChange} required />
+          <input name="price" type="number" placeholder="Price..." onChange={handlePriceChange} required />
+          <span id="feedback">{feedback}</span>
+          <br></br>
             {/* CREATE BUTTON */}
           <button id="create" type="submit"> CREATE </button>
             {/* CANCEL BUTTON */}
