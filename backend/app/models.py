@@ -45,7 +45,9 @@ class Piece(Base):
     color = Column(Enum(Colors))
     size = Column(Enum(Size))
     brand = Column(String)
+    cost_per_use = Column(Float)
     #worn dates - list
+    #picture
     #buying info - text
     #care instructions
     #tag

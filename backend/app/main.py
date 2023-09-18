@@ -48,13 +48,13 @@ async def get_clth(id:int, db: Session = Depends(get_db)):
 #  if user.password == 'Test123':
 #   return add_clothes(user, cloth)
 
-@app.put('/update_piece/{piece_id}')
-async def updateClothes(db: Session = Depends(get_db), piece: schemas.Piece):
- return crud.update_clothes(db, piece)
+# @app.put('/update_piece/{piece_id}')
+# async def updateClothes(db: Session = Depends(get_db), piece: schemas.Piece):
+#  return crud.update_clothes(db, piece)
 
-@app.delete('/delete_piece/{piece_id}')
-async def deleteClothes(db: Session = Depends(get_db), piece : schemas.Piece)
- return crud.delete_clothes(db, piece)
+# @app.delete('/delete_piece/{piece_id}')
+# async def deleteClothes(db: Session = Depends(get_db), piece : schemas.Piece)
+#  return crud.delete_clothes(db, piece)
 
 # # Not necessary in MVP!
 # @app.post('/signin')
