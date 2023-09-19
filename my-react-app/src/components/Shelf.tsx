@@ -13,11 +13,6 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
 }) => {
 
 
-// 'Shelf' element
-// this element simply reads/gets data about items (description, color, brand, price)
-// HTTP GET(!?) Request Method
-
-
   return (
     
     <div id='itemslist'>
@@ -25,11 +20,12 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
         
         <div id='items-container'>
             {/* ITEMS DATA */}
-            {/* Would we perfect, if instead of just grey fieldset we could display a picture uploaded by user, any idea how? ;D */}
+            {/* Would we perfect, if instead of just grey fieldset we could display a picture uploaded by user */}
         <fieldset key={item.id}>
             <p> Description: {item.description} </p>
             <p> Color: {item.color} </p>
             <p> Brand: {item.brand} </p>
+            <p> Size: {item.size} </p>
             <p> Price: {item.price} €</p>
         </fieldset>
         

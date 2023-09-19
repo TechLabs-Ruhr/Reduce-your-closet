@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const EditForm = ({ item }) => { 
   
@@ -6,10 +6,12 @@ const EditForm = ({ item }) => {
   const [editedItem, setEditedItem] = useState({
     color: '',
     brand: '',
+    size: '',
     description: '',
     price: ''
   });
 
+  const [feedback, setFeedback] = useState('');
   
 
   const toggleEditForm = () => {
@@ -24,6 +26,9 @@ const EditForm = ({ item }) => {
   }
   const handleBrandChange = (e:any) => {
     setEditedItem({...editedItem, brand: e.target.value});
+  }
+  const handleSizeChange = (e:any) => {
+    setEditedItem({...editedItem, size: e.target.value});
   }
   const handlePriceChange = (e:any) => {
     setEditedItem({...editedItem, price: e.target.value});
@@ -40,13 +45,15 @@ const EditForm = ({ item }) => {
     if(editedItem.brand === '') {
       editedItem.brand = item.brand
     }
+    if(editedItem.size === '') {
+      editedItem.size = item.size
+    }
     if(editedItem.price === '') {
       editedItem.price = item.price
     }
 
 //Edit form, 
-//User should be able to EDIT existing items description, color, brand and price on Click 'confirm' button, items id stays unchanged
-//HTTP PATCH(!?) Request Method
+//User should be able to EDIT existing items description, color, brand, size and price on Click 'confirm' button, items id stays unchanged
 
     console.log(editedItem);
    ({type: 'EDIT_ITEM', editedItem: {
@@ -54,12 +61,25 @@ const EditForm = ({ item }) => {
         id: item.id,
         color: editedItem.color,
         brand: editedItem.brand,
+        size: editedItem.size,
         description: editedItem.description,
         price: editedItem.price
     }
     });
     toggleEditForm();
   }
+
+  useEffect(() => {
+    fetch("http://localhost:8080/clth/all")
+    .then(response => response.json())
+    .then(data => {
+      setEditedItem (data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+   setFeedback("Something went wrong, please try to edit this item again");
+   });
+})
 
   return (
     <div>
@@ -75,6 +95,8 @@ const EditForm = ({ item }) => {
           <input type='text' placeholder={item.color} onChange={handleColorChange}/>
           <label>Brand</label>
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
+          <label>Size</label>
+          <input type='text' placeholder={item.size} onChange={handleSizeChange}/>
           <label>Price in €</label>
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           {/* CONFIRM BUTTON */}
