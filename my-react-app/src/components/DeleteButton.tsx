@@ -1,14 +1,21 @@
+import { useEffect, useState} from 'react'
+
 const DeleteButton = () => {
 
-//Delete button, 
-//Item should be DELETED from database on Click remove button
-//HTTP DELETE Request Method
+  const [feedback, setFeedback] = useState('');
+
+  useEffect(() => {
+    // DELETE request using fetch inside useEffect React hook
+    fetch('localhost:8080/clth/all', { method: 'DELETE' })
+        .then(() => setFeedback('Deleted successfuly'));
+}, []);
+
 
   return (
     <div className="delete-button">
-      <button className="ClosetButtons" onClick={() => ( {type: 'remove'} )}>REMOVE</button>
+      <button className="ClosetButtons" onClick={() => ( {type: 'delete'} )}>REMOVE</button>
+      <span id="feedback">{feedback}</span>
     </div>
   );
 }
-
 export default DeleteButton;

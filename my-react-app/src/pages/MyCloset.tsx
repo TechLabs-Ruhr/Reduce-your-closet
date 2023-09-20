@@ -1,6 +1,5 @@
 import Shelf from '../components/Shelf'
 import { useEffect, useState } from 'react'
-import { v4 as uuidv4} from 'uuid'
 import Navbar2 from "../components/Navbar(userloged)"
 import '../CSS/MyCloset.css'
 import { Link } from "react-router-dom"
@@ -8,9 +7,7 @@ import { Piece } from '../types'
 
 const MyCloset = () => {
 
-//Data i created just to check how it displays :) This is what i couldnt share yesterday (Ayman)
-
-  const clothesDummy: Piece[] = [
+  /*const clothesDummy: Piece[] = [
       {
         type: 'top',
         color: 'red',
@@ -67,25 +64,24 @@ const MyCloset = () => {
         price: 20,
         id: 1
       }
-    ];
-
-    // define type for cloth item
-
+    ]; */
 
     // use react use-effect hook to fetch all clothes from REST-API
     const [clothes, setClothes] = useState<Piece[]>([]);
+    const [feedback, setFeedback] = useState('');
     
     useEffect(() => {
-      // fetch("http://localhost:8080/clothes")
-      // .then(response => response.json())
-      // .then(data => {
-      //   setClothes(data);
-      // })
-      // .catch((error) => {
-      //   console.error('Error:', error);
-      // });
+       fetch("http://localhost:8080/clth/all")
+       .then(response => response.json())
+       .then(data => {
+         setClothes(data);
+       })
+       .catch((error) => {
+         console.error('Error:', error);
+      setFeedback("Something went wrong, please refresh the page");
+      });
 
-      setClothes(clothesDummy);
+      //setClothes(clothesDummy);
 
     })
 
@@ -138,6 +134,7 @@ const MyCloset = () => {
 
         <div  onClick={() => setItemToShow('bag')}> <h3> BAGS </h3> 
         {itemToShow === 'bag' && <div> <Shelf itemList={bag} /> </div>}
+     
         </div>
     </div>
 

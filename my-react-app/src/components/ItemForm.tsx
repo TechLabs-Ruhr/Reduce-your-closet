@@ -1,5 +1,5 @@
 import { useState} from 'react'
-import UploadImage from '../components/UploadImage'
+//import UploadImage from '../components/UploadImage'
 
 // Add Your Item Form 
 
@@ -8,6 +8,7 @@ const ItemForm = ({typeOfItem}) => {
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
+  const [size, setSize] = useState('');
   const [price, setPrice] = useState(0.0);
   const [feedback, setFeedback] = useState('');
 
@@ -21,17 +22,21 @@ const ItemForm = ({typeOfItem}) => {
   const handleBrandChange = (e:any) => {
     setBrand(e.target.value);
   }
+  const handleSizeChange = (e:any) => {
+    setSize(e.target.value);
+  }
   const handlePriceChange = (e:any) => {
     setPrice(e.target.value);
   }
   const handleSubmit = (e:any) => {
     e.preventDefault();
 
-    if(description === '' || color === '' || brand === '' || price === 0.0){
+    if(description === '' || color === '' || brand === '' || size === '' || price === 0.0){
       setFeedback("Please fill in all fields");
     } else {
+      
       // HTTP POST to Backend to create a new item
-      const data = {notes: description, color, brand, price, size: 'm', category: typeOfItem};
+      const data = {notes: description, color, brand, price, size, category: typeOfItem};
       fetch("http://localhost:8080/additem/create", {
           method: 'POST', 
           headers: {
@@ -57,20 +62,19 @@ const ItemForm = ({typeOfItem}) => {
     }
   }
 
-//User should be able to ADD NEW ITEM to database, adding its description, color, brand and price 
+//User should be able to ADD NEW ITEM to database, adding its description, color, brand, size and price 
 // on Click 'create' button, items should be saved
 // on Click 'cancel' button, changes made by user should be canceled
 //item should get own ID and be displayed in 'MY CLOSET' page. 
 //HTTP POST Request Method
 
 
-
   return (
     <div className='itemFormContainer'>
-       <div id='uploadImage'>
-        {/* Page contains also UPLOAD IMAGE form, for this element check UploadImage.tsx file from folder 'components' */}
+       {/*<div id='uploadImage'>
+        Page contains also UPLOAD IMAGE form, for this element check UploadImage.tsx file from folder 'components'
         <UploadImage/>
-       </div>
+       </div> */}
       <form onSubmit={handleSubmit}>
         <br></br>
         <div id='itemForm'>
@@ -88,11 +92,17 @@ const ItemForm = ({typeOfItem}) => {
           <br />
 
           <input name="brand" type="text" placeholder="Brand..." onChange={handleBrandChange} required />
+         
+          <label>Size</label>
+          <br />
+
+          <input name="size" type="text" placeholder="Size..." onChange={handleSizeChange} required />
 
           <label>Price in € </label>
           <br />
 
           <input name="price" type="number" placeholder="Price..." onChange={handlePriceChange} required />
+          <br></br>
           <span id="feedback">{feedback}</span>
           <br></br>
             {/* CREATE BUTTON */}

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -9,8 +8,6 @@ function Register() {
     email: "",
     pass: ""
   });
-
-  const [errorMessages, setErrorMessages] = useState({});
 
   const handleInputChange = (event:any) => {
     
@@ -42,32 +39,7 @@ function Register() {
       // if agree === false, it will be set to true
       setAgree(!agree);
     }
-  
 
-    /*const config = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(values)
-    }
-    
-    fetch('http://localhost:8080/', config)
-      .then(response => response.json())
-      .then(result => {
-        if (result.error) {
-         throw new Error(result.error) 
-        }
-        setValues(result.firstName);
-        setValues(result.lastName);
-        setValues(result.email);
-        setValues(result.pass);
-        <Navigate replace to="/createyourcloset" />
-
-
-        console.log(errorMessages);
-        setErrorMessages({ name: "email", message: errorMessages });
-         }); */
   
 
   return (

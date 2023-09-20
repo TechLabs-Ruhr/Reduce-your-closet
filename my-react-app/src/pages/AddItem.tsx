@@ -13,8 +13,6 @@ const AddItem = () => {
     setTypeOfItem(e.target.value);
   }
 
-  // think there is no http request required
-
   return (
     <div className='AddItem'>
         <Navbar2 />
