@@ -2,7 +2,7 @@ export interface Piece {
     type: string,
     color: string,
     brand: string,
-    site:string,
+    size:string,
     description: string,
     price: number,
     id: number
