@@ -8,20 +8,19 @@ from app.db_sqlite import SessionLocal, engine, get_db
 # from fastapi.middleware.cors import CORSMiddleware
 # from crud import get_clothes, add_clothes, update_clothes, delete_clothes
 
-# app.add_middleware(
-# 	CORSMiddleware,
-# 	allow_origins=origins,
-# 	allow_credentials = True,
-# 	allow_methods = ["*"],
-# 	allow_headers = ["*"],
-# )
-
 models.Base.metadata.create_all(bind = engine)
 
 app = FastAPI()
 
 # set origin to prevent security breaches - change on deployment!
 origins = ['http://localhost:5173']
+app.add_middleware(
+CORSMiddleware,
+allow_origins=origins,
+allow_credentials = True,
+allow_methods = ["*"],
+allow_headers = ["*"],
+)
 
 # Routes
 ## root node
