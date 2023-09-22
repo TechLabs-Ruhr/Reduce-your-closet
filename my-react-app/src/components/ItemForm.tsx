@@ -3,15 +3,15 @@ import { useState} from 'react'
 
 // Add Your Item Form 
 
-const ItemForm = ({typeOfItem}) => {
+const ItemForm = ({typeOfItem}: { typeOfItem: string }) => {
   
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
   const [size, setSize] = useState('');
   const [price, setPrice] = useState(0.0);
-  const [feedback, setFeedback] = useState('');
-
+  const [feedback, setFeedback] = useState(''); 
+  
 
   const handleDescChange = (e:any) => {
     setDescription(e.target.value);
@@ -52,8 +52,9 @@ const ItemForm = ({typeOfItem}) => {
             return response.json();
           }
       })
-      .then(data => {
-          setFeedback("Item successfully added");
+      .then((data) => {
+        console.log('data:', data);
+        setFeedback("Item successfully added");
       })
       .catch((error) => {
           console.error('Error:', error);
@@ -83,7 +84,7 @@ const ItemForm = ({typeOfItem}) => {
 
           <input name="desc" type="text" placeholder={`Description...`} onChange={handleDescChange} required />
         
-          <label>Color of the {typeOfItem}</label>
+          <label>Color </label>
           <br />
 
           <input name="color" type="text" placeholder="Color..." onChange={handleColorChange} required />

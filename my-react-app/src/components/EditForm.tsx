@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const EditForm = ({ item }) => { 
+const EditForm = ({ item }: { item: any}) => { 
   
   const [showEditForm, setShowEditForm] = useState(false);
   const [editedItem, setEditedItem] = useState({
@@ -101,6 +101,7 @@ const EditForm = ({ item }) => {
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           {/* CONFIRM BUTTON */}
           <button className="confirmbutton" type='submit'>CONFIRM</button>
+          <span id="feedback">{feedback}</span>
         </form>)
         : null}
       </div>

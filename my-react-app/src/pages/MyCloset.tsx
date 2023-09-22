@@ -96,7 +96,7 @@ const MyCloset = () => {
   const accesorie = clothes.filter(item => item.type === 'accesorie');
   const bag = clothes.filter(item => item.type === 'bag');
 
-  const [itemToShow, setItemToShow] = useState('tops') 
+  const [itemToShow, setItemToShow] = useState('top') 
   
   return ( 
 
@@ -113,7 +113,7 @@ const MyCloset = () => {
     
        {/* ITEMS ADDED BY USER DIPLAY HERE */}
         <div onClick={() => setItemToShow('top')}> <h3> TOPS </h3>
-          {itemToShow === 'top' && <div> <Shelf itemList={top} /> </div>}
+          {itemToShow === 'top' && <div> <Shelf itemList={clothes} /> </div>}
         </div>
 
         <div  onClick={() => setItemToShow('bottom')}> <h3> BOTTOMS</h3> 
