@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import '../CSS/MyCloset.css'
  
 function WearingCounter() {
@@ -24,6 +24,19 @@ function WearingCounter() {
       setDate(e.target.value);
     };
 
+    {
+     /* useEffect(() => {
+          // POST request using fetch inside useEffect React hook
+          const requestDate = {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+          };
+          fetch('', requestDate)
+              .then(response => response.json())
+              .then(data => setDate(data.id));
+      }, []); */
+
   return (
     <div className="counter">
       <div className="buttonContainer">
@@ -42,6 +55,7 @@ function WearingCounter() {
         </div>
     </div>
   );
-};
+}
+}
 
-export default WearingCounter
+export default WearingCounter 

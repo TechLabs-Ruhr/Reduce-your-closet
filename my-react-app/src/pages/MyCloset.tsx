@@ -134,7 +134,7 @@ const MyCloset = () => {
 
         <div  onClick={() => setItemToShow('bag')}> <h3> BAGS </h3> 
         {itemToShow === 'bag' && <div> <Shelf itemList={bag} /> </div>}
-     
+        <span id="feedback">{feedback}</span>
         </div>
     </div>
 

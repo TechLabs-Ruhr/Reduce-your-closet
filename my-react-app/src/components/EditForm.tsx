@@ -10,8 +10,6 @@ const EditForm = ({ item }: { item: any}) => {
     description: '',
     price: ''
   });
-
-  const [feedback, setFeedback] = useState('');
   
 
   const toggleEditForm = () => {
@@ -52,9 +50,6 @@ const EditForm = ({ item }: { item: any}) => {
       editedItem.price = item.price
     }
 
-//Edit form, 
-//User should be able to EDIT existing items description, color, brand, size and price on Click 'confirm' button, items id stays unchanged
-
     console.log(editedItem);
    ({type: 'EDIT_ITEM', editedItem: {
         type: item.type,
@@ -68,19 +63,40 @@ const EditForm = ({ item }: { item: any}) => {
     });
     toggleEditForm();
   }
+  
 
-  useEffect(() => {
-    fetch("http://localhost:8080/clth/all")
-    .then(response => response.json())
-    .then(data => {
-      setEditedItem (data);
+    /* useEffect(() => {
+        let PatchRequest = () => {
+        // PATCH request with fetch API in javascript
+        fetch("", {
+        headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+        },
+        method: "PATCH",	
+        // Fields that to be updated are passed
+        body: JSON.stringify({
+          color: '',
+          brand: '',
+          size: '',
+          description: '',
+          price: ''
+        })
+       })
+    .then(function (response) {
+  
+    console.log(response);
+    return response.json();
     })
-    .catch((error) => {
-      console.error('Error:', error);
-   setFeedback("Something went wrong, please try to edit this item again");
-   });
-})
+    .then(function (data) {
+    console.log(data);
+    });
+  };
+  
+  PatchRequest(); }
+  , []); */
 
+    
   return (
     <div>
       <div>
@@ -101,7 +117,7 @@ const EditForm = ({ item }: { item: any}) => {
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           {/* CONFIRM BUTTON */}
           <button className="confirmbutton" type='submit'>CONFIRM</button>
-          <span id="feedback">{feedback}</span>
+      
         </form>)
         : null}
       </div>

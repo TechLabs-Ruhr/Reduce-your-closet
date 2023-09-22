@@ -2,13 +2,12 @@ import { useEffect, useState} from 'react'
 
 const DeleteButton = () => {
 
-  const [feedback, setFeedback] = useState('');
+  const [feedback, setFeedback] = useState(null);
 
-  useEffect(() => {
-    // DELETE request using fetch inside useEffect React hook
-    fetch('localhost:8080/clth/all', { method: 'DELETE' })
-        .then(() => setFeedback('Deleted successfuly'));
-}, []);
+  //useEffect(() => {
+  //fetch('', { method: 'DELETE' })
+  //     .then(() => setFeedback('Deleted successfuly'));
+//}, []);
 
 
   return (
