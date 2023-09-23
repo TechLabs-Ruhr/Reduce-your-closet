@@ -4,6 +4,7 @@ from enum import Enum
 
 class Category(str, Enum):
     top = 'top'
+    bottom = 'bottom'
     shirt = 'shirt'
     longsleeve = 'longsleeve'
     jacket = 'jacket'
@@ -13,35 +14,45 @@ class Category(str, Enum):
     pants = 'pants'
     shoes = 'shoes'
     bag = 'bag'
-    accesoires = 'accesoires'
+    accesorie = 'accesorie'
+    outwear = 'outwear'
 
 class Colors(str, Enum):
     black = 'black'
     white = 'white'
-    red = 'red'
+    grey = 'grey'
+    beige = 'beige'
+    brown = 'brown'
     yellow = 'yellow'
     orange = 'orange'
-    green = 'green'
-    blue = 'blue'
+    mustard = 'mustard'
+    red = 'red'
     pink = 'pink'
-    brown = 'brown'
-    # I guess there are a lot of colors to add here :D:D feel free to come up with them (don't forget to also add within models.py)
+    lightpink = 'lightpink'
+    violet = 'violet'
+    green = 'green'
+    bottlegreen = 'bottlegreen'
+    lightgreen = 'lightgreen'
+    colorful = 'colorful'
+    mint = 'mint'
+    blue = 'blue'
+    lightblue = 'lightblue'
 
-class Size(str, Enum):
-    xxs = 'xxs'
-    xs = 'xs'
-    s = 's'
-    m = 'm'
-    l = 'l'
-    xl = 'xl'
-    xxl = 'xxl'
+# class Size(str, Enum):
+#     xxs = 'xxs'
+#     xs = 'xs'
+#     s = 's'
+#     m = 'm'
+#     l = 'l'
+#     xl = 'xl'
+#     xxl = 'xxl'
 
 
 class PieceBase(BaseModel):
     category: Category
     price: float
     color: Colors
-    size: Size
+    size: str
     brand: str
     #worn dates - list
     #buying info - text
