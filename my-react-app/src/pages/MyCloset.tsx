@@ -7,96 +7,49 @@ import { Piece } from '../types'
 
 const MyCloset = () => {
 
-  /*const clothesDummy: Piece[] = [
-      {
-        type: 'top',
-        color: 'red',
-        brand: 'stradivarius',
-        description: 'blouse',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'top',
-        color: 'green',
-        brand: 'HM',
-        description: 'tshirt',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'bottom',
-        color: '',
-        brand: '',
-        description: 'trausers',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'shoes',
-        color: '',
-        brand: '',
-        description: 'boots',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'outwear',
-        color: '',
-        brand: '',
-        description: 'jacket',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'accesorie',
-        color: '',
-        brand: '',
-        description: 'earings',
-        price: 20,
-        id: 1
-      },
-      {
-        type: 'bag',
-        color: '',
-        brand: '',
-        description: 'small bag',
-        price: 20,
-        id: 1
-      }
-    ]; */
+    //clothes categories filtered to display accordingly
 
-    // use react use-effect hook to fetch all clothes from REST-API
     const [clothes, setClothes] = useState<Piece[]>([]);
+    const [top, setTop] = useState<Piece[]>([]);
+    const [bottom, setBottom] = useState<Piece[]>([]);
+    const [shoes, setShoes] = useState<Piece[]>([]);
+    const [outwear, setOutwear] = useState<Piece[]>([]);
+    const [accesorie, setAccesorie] = useState<Piece[]>([]);
+    const [bag, setBag] = useState<Piece[]>([]);
     const [feedback, setFeedback] = useState('');
+
+    useEffect(()=> { 
+      setTop(clothes.filter(item => item.type === 'top')); 
+      setBottom(clothes.filter(item => item.type === 'bottom')), clothes;
+      setShoes(clothes.filter(item => item.type === 'shoes')), clothes;
+      setOutwear(clothes.filter(item => item.type === 'outwear')), clothes;
+      setAccesorie(clothes.filter(item => item.type === 'accesorie')), clothes; 
+      setBag(clothes.filter(item => item.type === 'bag')), clothes;
+}, [])
+
     
     useEffect(() => {
        fetch("http://localhost:8080/clth/all")
        .then(response => response.json())
        .then(data => {
          setClothes(data);
+         setTop(data);
+         setBottom(data);
+         setShoes(data);
+         setOutwear(data);
+         setAccesorie(data);
+         setBag(data);
        })
        .catch((error) => {
          console.error('Error:', error);
       setFeedback("Something went wrong, please refresh the page");
       });
 
-      //setClothes(clothesDummy);
-
     })
 
+    
 
-    //clothes categories filtered to display accordingly
-
-
-  const top = clothes.filter(item => item.type === 'top');
-  const bottom = clothes.filter(item => item.type === 'bottom');
-  const shoes = clothes.filter(item => item.type === 'shoes');
-  const outwear = clothes.filter(item => item.type === 'outwear');
-  const accesorie = clothes.filter(item => item.type === 'accesorie');
-  const bag = clothes.filter(item => item.type === 'bag');
-
-  const [itemToShow, setItemToShow] = useState('top') 
+    const [itemToShow, setItemToShow] = useState('top');
   
   return ( 
 
@@ -110,10 +63,10 @@ const MyCloset = () => {
           <Link to="/additem"><button id='additem'>ADD ITEM</button> </Link>
         </h2> 
       </div>
-    
+      <span id="feedback">{feedback}</span>
        {/* ITEMS ADDED BY USER DIPLAY HERE */}
         <div onClick={() => setItemToShow('top')}> <h3> TOPS </h3>
-          {itemToShow === 'top' && <div> <Shelf itemList={clothes} /> </div>}
+          {itemToShow === 'top' && <div> <Shelf itemList={top} /> </div>}
         </div>
 
         <div  onClick={() => setItemToShow('bottom')}> <h3> BOTTOMS</h3> 
@@ -134,7 +87,6 @@ const MyCloset = () => {
 
         <div  onClick={() => setItemToShow('bag')}> <h3> BAGS </h3> 
         {itemToShow === 'bag' && <div> <Shelf itemList={bag} /> </div>}
-        <span id="feedback">{feedback}</span>
         </div>
     </div>
 
