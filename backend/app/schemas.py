@@ -1,6 +1,7 @@
 # A "schema" is a definition or description of something. Not the code that implements it, but just an abstract description used to check typing
 from pydantic import BaseModel
 from enum import Enum
+#from datetime import date, datetime, time, timedelta
 
 class Category(str, Enum):
     top = 'top'
@@ -54,6 +55,7 @@ class PieceBase(BaseModel):
     color: Colors
     size: str
     brand: str
+    #worn: list[datetime]
     #worn dates - list
     #buying info - text
     #care instructions

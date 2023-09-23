@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Enum
+from sqlalchemy import Column, ARRAY, Integer, String, Float, Boolean, DateTime, Enum
 from enum import Enum as EnumClass
 from .db_sqlite import Base
 
@@ -17,7 +17,7 @@ class Category(str, EnumClass):
     accesorie = 'accesorie'
     outwear = 'outwear'
 
- class Colors(str, EnumClass):
+class Colors(str, EnumClass):
     black = 'black'
     white = 'white'
     grey = 'grey'
@@ -57,6 +57,7 @@ class Piece(Base):
     size = Column(String)
     brand = Column(String)
     cost_per_use = Column(Float)
+    #worn = Column(ARRAY(DateTime))
     #worn dates - list
     #picture
     #buying info - text
