@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Enum
+from sqlalchemy import Column, ARRAY, Integer, String, Float, Boolean, DateTime, Enum
 from enum import Enum as EnumClass
 from .db_sqlite import Base
 
 class Category(str, EnumClass):
     top = 'top'
+    bottom = 'bottom'
     shirt = 'shirt'
     longsleeve = 'longsleeve'
     jacket = 'jacket'
@@ -13,28 +14,38 @@ class Category(str, EnumClass):
     pants = 'pants'
     shoes = 'shoes'
     bag = 'bag'
-    accesoires = 'accesoires'
+    accesorie = 'accesorie'
+    outwear = 'outwear'
 
 class Colors(str, EnumClass):
     black = 'black'
     white = 'white'
-    red = 'red'
+    grey = 'grey'
+    beige = 'beige'
+    brown = 'brown'
     yellow = 'yellow'
     orange = 'orange'
-    green = 'green'
-    blue = 'blue'
+    mustard = 'mustard'
+    red = 'red'
     pink = 'pink'
-    brown = 'brown'
-    # I guess there are a lot of colors to add here :D:D feel free to come up with them (don't forget to also add within schemas.py)
+    lightpink = 'lightpink'
+    violet = 'violet'
+    green = 'green'
+    bottlegreen = 'bottlegreen'
+    lightgreen = 'lightgreen'
+    colorful = 'colorful'
+    mint = 'mint'
+    blue = 'blue'
+    lightblue = 'lightblue'
 
-class Size(str, EnumClass):
-    xxs = 'xxs'
-    xs = 'xs'
-    s = 's'
-    m = 'm'
-    l = 'l'
-    xl = 'xl'
-    xxl = 'xxl'
+# class Size(str, EnumClass):
+#     xxs = 'xxs'
+#     xs = 'xs'
+#     s = 's'
+#     m = 'm'
+#     l = 'l'
+#     xl = 'xl'
+#     xxl = 'xxl'
 
 class Piece(Base):
     __tablename__ = 'pieces'
@@ -43,9 +54,10 @@ class Piece(Base):
     category = Column(Enum(Category))
     price = Column(Float)
     color = Column(Enum(Colors))
-    size = Column(Enum(Size))
+    size = Column(String)
     brand = Column(String)
     cost_per_use = Column(Float)
+    #worn = Column(ARRAY(DateTime))
     #worn dates - list
     #picture
     #buying info - text
