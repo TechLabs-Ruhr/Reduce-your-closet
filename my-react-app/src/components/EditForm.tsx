@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import '../CSS/MyCloset.css';
+
 
 const EditForm = ({ item }: { item: any}) => { 
   
@@ -108,7 +110,30 @@ const EditForm = ({ item }: { item: any}) => {
           <label>Description</label>
           <input type='text' placeholder={item.description} onChange={handleDescChange}/>
           <label>Color</label>
-          <input type='text' placeholder={item.color} onChange={handleColorChange}/>
+          <select name= 'editcolor' placeholder={item.color} onChange={handleColorChange}>
+            <option value="">Please choose the color</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="grey">Grey</option>
+            <option value="beige">Beige</option>
+            <option value="brown">Brown</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="mustard">Mustard</option>
+            <option value="red">Red</option>
+            <option value="pink">Pink</option>
+            <option value="lightpink">Light Pink</option>
+            <option value="violet">Violet</option>
+            <option value="blue">Blue</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="green">Green</option>
+            <option value="bottlegreen">Bottle Green</option>
+            <option value="lightgreen">Light Green</option>
+            <option value="colorful"> Colorful</option>
+            <option value="mint">Mint</option>
+         </select>
+         <br></br>
+         <br></br>
           <label>Brand</label>
           <input type='text' placeholder={item.brand} onChange={handleBrandChange}/>
           <label>Size</label>

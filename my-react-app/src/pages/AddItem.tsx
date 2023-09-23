@@ -18,7 +18,7 @@ const AddItem = () => {
         <Navbar2 />
         <h2 id ='AddItemTitle'>Add a new item to your SMARTROBE </h2>
 
-      <select className='select' onChange={handleTypeChange}>
+      <select className='selectCategory' onChange={handleTypeChange}>
         <option value="">Please choose category</option>
         <option value="top">TOPS</option>
         <option value="bottom">BOTTOMS</option>

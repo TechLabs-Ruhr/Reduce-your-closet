@@ -4,7 +4,7 @@
     
     .AddItem {
     width: 1440px;
-    height: 850px;
+    height: 870px;
     border: solid #ffffff;
     }
 
@@ -12,7 +12,7 @@
     padding: 100px 30px 20px 20px;
     }
 
-    .select {
+    .selectCategory {
     margin: 0px 20px;
     width: 180px;
     height: 25px;
@@ -22,15 +22,21 @@
     background: #FFF;
     }
 
-    #itemForm input {
-    width: 312px;
-    height: 35px;
+    select, input[type="text"]{
+    width:100%;
+    box-sizing:border-box;
+    }
+
+    #itemForm input, select {
+    width: 330px;
+    height: 55px;
     flex-shrink: 0;
     border-radius: 5px;
     border: 1px solid #000;
     background: #FFF;
+    font-size: 80%;
     }
-    
+
     .itemFormContainer {
    display: flex;
    flex-direction: row;

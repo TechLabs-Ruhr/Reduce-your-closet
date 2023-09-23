@@ -63,13 +63,6 @@ const ItemForm = ({typeOfItem}: { typeOfItem: string }) => {
     }
   }
 
-//User should be able to ADD NEW ITEM to database, adding its description, color, brand, size and price 
-// on Click 'create' button, items should be saved
-// on Click 'cancel' button, changes made by user should be canceled
-//item should get own ID and be displayed in 'MY CLOSET' page. 
-//HTTP POST Request Method
-
-
   return (
     <div className='itemFormContainer'>
        {/*<div id='uploadImage'>
@@ -77,35 +70,51 @@ const ItemForm = ({typeOfItem}: { typeOfItem: string }) => {
         <UploadImage/>
        </div> */}
       <form onSubmit={handleSubmit}>
-        <br></br>
         <div id='itemForm'>
           <label>What kind of {typeOfItem} is it?</label>
-          <br />
-
           <input name="desc" type="text" placeholder={`Description...`} onChange={handleDescChange} required />
-        
+         
           <label>Color </label>
           <br />
-
-          <input name="color" type="text" placeholder="Color..." onChange={handleColorChange} required />
+          <select name='selectColor' onChange={handleColorChange} required>
+            <option value="">Please choose the color</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="grey">Grey</option>
+            <option value="beige">Beige</option>
+            <option value="brown">Brown</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="mustard">Mustard</option>
+            <option value="red">Red</option>
+            <option value="pink">Pink</option>
+            <option value="lightpink">Light Pink</option>
+            <option value="violet">Violet</option>
+            <option value="blue">Blue</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="green">Green</option>
+            <option value="bottlegreen">Bottle Green</option>
+            <option value="lightgreen">Light Green</option>
+            <option value="colorful"> Colorful</option>
+            <option value="mint">Mint</option>
+         </select>
+           <br/>
+           <br/>
        
           <label>Brand</label>
-          <br />
-
+          <br/>
           <input name="brand" type="text" placeholder="Brand..." onChange={handleBrandChange} required />
          
           <label>Size</label>
-          <br />
-
+          <br/>
           <input name="size" type="text" placeholder="Size..." onChange={handleSizeChange} required />
 
           <label>Price in € </label>
-          <br />
-
+          <br/>
           <input name="price" type="number" placeholder="Price..." onChange={handlePriceChange} required />
+          
           <br></br>
           <span id="feedback">{feedback}</span>
-          <br></br>
             {/* CREATE BUTTON */}
           <button id="create" type="submit"> CREATE </button>
             {/* CANCEL BUTTON */}
