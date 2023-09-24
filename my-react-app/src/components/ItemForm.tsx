@@ -111,9 +111,7 @@ const ItemForm = ({typeOfItem}: { typeOfItem: string }) => {
 
           <label>Price in € </label>
           <br/>
-          <input name="price" type="number" placeholder="Price..." onChange={handlePriceChange} required />
-          
-          <br></br>
+          <input name="price" type="number" placeholder="Price..." onChange={handlePriceChange} required />  
           <span id="feedback">{feedback}</span>
             {/* CREATE BUTTON */}
           <button id="create" type="submit"> CREATE </button>

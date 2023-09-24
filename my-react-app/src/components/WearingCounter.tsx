@@ -39,20 +39,21 @@ function WearingCounter() {
 
   return (
     <div className="counter">
-      <div className="buttonContainer">
           {/* MARK AS WORN BUTTON */}
+      <div>
       <button className='ClosetButtons' onClick={() => toggleDatePicker()}> MARK AS WORN </button>
       </div>
-      <div id='datepicker'>
+   
+      <div id='container'>
           {/* DATE PICKER */}
       { showDatePicker?
         ( <form onChange={handleChange}>
-            <input type="date" />
+            <input id='datepicker'type="date" />
           {/* SUBMIT BUTTON */}
-            <button id="'SubmitButton" type='submit'> Submit </button>  
+            <button id="submit" type='submit'> Submit </button>  
         </form> )
         : null}
-        </div>
+      </div>
     </div>
   );
 }
