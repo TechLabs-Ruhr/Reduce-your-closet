@@ -1,5 +1,5 @@
 export interface Piece {
-    type: string,
+    category: string,
     color: string,
     brand: string,
     size:string,

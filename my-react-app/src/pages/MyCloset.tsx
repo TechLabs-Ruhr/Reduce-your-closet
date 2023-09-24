@@ -18,17 +18,33 @@ const MyCloset = () => {
     const [bag, setBag] = useState<Piece[]>([]);
     const [feedback, setFeedback] = useState('');
 
-    useEffect(()=> { 
-      setTop(clothes.filter(item => item.type === 'top')); 
-      setBottom(clothes.filter(item => item.type === 'bottom')), clothes;
-      setShoes(clothes.filter(item => item.type === 'shoes')), clothes;
-      setOutwear(clothes.filter(item => item.type === 'outwear')), clothes;
-      setAccesorie(clothes.filter(item => item.type === 'accesorie')), clothes; 
-      setBag(clothes.filter(item => item.type === 'bag')), clothes;
-}, [])
+    const getCategory = (category:string)=> { 
+      fetch("http://localhost:8080/clth/all")
+      .then(response => response.json())
+      .then(data => {
+        setClothes(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+     setFeedback("Something went wrong, please refresh the page");
+     });
+    setItemToShow (category)
+     console.log (top)
+    }
+
+    useEffect (() => { 
+      setTop(clothes.filter(item => item['category'] === 'top')); 
+      setBottom(clothes.filter(item => item['category'] === 'bottom')), clothes;
+      setShoes(clothes.filter(item => item['category'] === 'shoes')), clothes;
+      setOutwear(clothes.filter(item => item['category'] === 'outwear')), clothes;
+      setAccesorie(clothes.filter(item => item['category'] === 'accesorie')), clothes; 
+      setBag(clothes.filter(item => item['category'] === 'bag')), clothes;
+      console.log (top)
+
+    },[clothes])
 
     
-    useEffect(() => {
+    /*useEffect(() => {
        fetch("http://localhost:8080/clth/all")
        .then(response => response.json())
        .then(data => {
@@ -45,11 +61,11 @@ const MyCloset = () => {
       setFeedback("Something went wrong, please refresh the page");
       });
 
-    })
+    }) */
 
     
 
-    const [itemToShow, setItemToShow] = useState('top');
+    const [itemToShow, setItemToShow] = useState('');
   
   return ( 
 
@@ -65,27 +81,27 @@ const MyCloset = () => {
       </div>
       <span id="feedback">{feedback}</span>
        {/* ITEMS ADDED BY USER DIPLAY HERE */}
-        <div onClick={() => setItemToShow('top')}> <h3> TOPS </h3>
+        <div onClick={() => getCategory("top")}> <h3> TOPS </h3>
           {itemToShow === 'top' && <div> <Shelf itemList={top} /> </div>}
         </div>
 
-        <div  onClick={() => setItemToShow('bottom')}> <h3> BOTTOMS</h3> 
+        <div  onClick={() => getCategory("bottom")}> <h3> BOTTOMS</h3> 
           {itemToShow === 'bottom' && <div> <Shelf itemList={bottom} /> </div>}
         </div>
            
-        <div  onClick={() => setItemToShow('shoes')}> <h3> SHOES </h3> 
+        <div  onClick={() => getCategory("shoes")}> <h3> SHOES </h3> 
           {itemToShow === 'shoes' && <div> <Shelf itemList={shoes} /> </div>}
         </div>
            
-        <div  onClick={() => setItemToShow('outwear')}> <h3> OUTWEAR </h3> 
+        <div onClick={() => getCategory("outwear")}> <h3> OUTWEAR </h3> 
           {itemToShow === 'outwear' && <div> <Shelf itemList={outwear} /> </div>}
         </div>
               
-        <div  onClick={() => setItemToShow('accesorie')}> <h3> ACCESORIES </h3> 
+        <div  onClick={() => getCategory("accesorie")}> <h3> ACCESORIES </h3> 
           {itemToShow === 'accesorie' && <div> <Shelf itemList={accesorie} /> </div>}
         </div>
 
-        <div  onClick={() => setItemToShow('bag')}> <h3> BAGS </h3> 
+        <div onClick={() => getCategory("bag")}> <h3> BAGS </h3> 
         {itemToShow === 'bag' && <div> <Shelf itemList={bag} /> </div>}
         </div>
     </div>
