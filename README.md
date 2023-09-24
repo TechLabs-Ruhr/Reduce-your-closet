@@ -47,7 +47,7 @@ Addtionaly some functionality is also available through RestAPI (see http://loca
 - [@Erik Ruslanov](https://github.com/0kcalf)
 - [@Marlena Stojakovic](https://github.com/Stojakovic1)
 - [@Jannik Nahrgang](https://github.com/thejaniak)
-- Ayman
+- [@Ayman Soultana](https://github.com/Hydropic)
 
 # TODO for the Techies
 Please **fill out the following information below**, as soon as possible. It is **required** to have this file completely filled out and up to date at the end of the project phase.
