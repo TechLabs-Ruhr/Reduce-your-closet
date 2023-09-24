@@ -1,4 +1,5 @@
-from sqlalchemy import Column, ARRAY, Integer, String, Float, Boolean, DateTime, Enum
+from sqlalchemy import Column, ARRAY, Integer, String, Float, Boolean, DateTime, Enum, ForeignKey
+from sqlalchemy.orm import relationship
 from enum import Enum as EnumClass
 from .db_sqlite import Base
 
@@ -47,6 +48,18 @@ class Colors(str, EnumClass):
 #     xl = 'xl'
 #     xxl = 'xxl'
 
+class WornDates(Base):
+    __tablename__ = 'worndates'
+    id = Column(Integer, primary_key = True, index = True)
+    cloth_id = Column(Integer)
+    timestamp = Column(String)
+
+class DebugTable(Base):
+    __tablename__ = 'debugtable'
+    id = Column(Integer, primary_key = True, index = True)
+    cloth_id = Column(Integer)
+    timestamp = Column(String)
+
 class Piece(Base):
     __tablename__ = 'pieces'
 
@@ -57,6 +70,8 @@ class Piece(Base):
     size = Column(String)
     brand = Column(String)
     cost_per_use = Column(Float)
+
+    #worndates = relationship('WornDates')
     #worn = Column(ARRAY(DateTime))
     #worn dates - list
     #picture

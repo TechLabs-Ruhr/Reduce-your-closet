@@ -48,6 +48,19 @@ class Colors(str, Enum):
 #     xl = 'xl'
 #     xxl = 'xxl'
 
+class WornDatesBase(BaseModel):
+    cloth_id: int
+    timestamp: str
+
+    class Config:
+        orm_mode = True
+
+class WornDatesCreate:
+    pass
+
+class WornDates:
+    id: int
+
 
 class PieceBase(BaseModel):
     category: Category
@@ -55,8 +68,8 @@ class PieceBase(BaseModel):
     color: Colors
     size: str
     brand: str
-    #worn: list[datetime]
-    #worn dates - list
+    #worndates = relationship('WornDates')
+    
     #buying info - text
     #care instructions
     #tag
@@ -65,7 +78,7 @@ class PieceBase(BaseModel):
     class Config:
     	orm_mode = True
 
-class PiceCreate(PieceBase):
+class PieceCreate(PieceBase):
     pass
 
 class Piece(PieceBase):

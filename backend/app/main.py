@@ -30,7 +30,7 @@ def read_root():
 	return {'App is': 'running'}
 
 @app.post('/additem/create')
-async def create_piece(piece: schemas.PiceCreate, db: Session = Depends(get_db)):
+async def create_piece(piece: schemas.PieceCreate, db: Session = Depends(get_db)):
 	return crud.create_piece(db = db, piece = piece)
 
 @app.get('/clth/all')
@@ -40,6 +40,22 @@ async def get_pieces(db: Session = Depends(get_db)):
 @app.get("/clth/{id}")
 async def get_clth(id:int, db: Session = Depends(get_db)):
 	return crud.get_piece(db = db, id = id)
+
+@app.put('/update_piece/{piece_id}')
+async def updateClothes(piece_id: int, piece: schemas.PieceBase, db: Session = Depends(get_db)):
+ 	return crud.update_clothes(db, piece, piece_id)
+
+@app.delete('/delete_piece/{piece_id}')
+async def deleteClothes(piece_id: int, db: Session = Depends(get_db)):
+ 	return crud.delete_clothes(db, piece_id)
+
+@app.post('/clth/{cloth_id}/adddate')
+async def add_date(cloth_id: int, timestamp: str, db: Session = Depends(get_db)):
+	return crud.add_date(db = db, cloth_id = cloth_id, timestamp = timestamp)
+
+@app.get('/clth/{cloth_id}/getdate')
+async def get_dates_by_id(cloth_id: int, db: Session = Depends(get_db)):
+	return crud.get_dates_by_id(id = cloth_id, db = db)
 
 # Legacy Routes ----------------------------------------------
 # @app.get('/get_clothes')
@@ -52,13 +68,7 @@ async def get_clth(id:int, db: Session = Depends(get_db)):
 #  if user.password == 'Test123':
 #   return add_clothes(user, cloth)
 
-# @app.put('/update_piece/{piece_id}')
-# async def updateClothes(db: Session = Depends(get_db), piece: schemas.Piece):
-#  return crud.update_clothes(db, piece)
 
-# @app.delete('/delete_piece/{piece_id}')
-# async def deleteClothes(db: Session = Depends(get_db), piece : schemas.Piece)
-#  return crud.delete_clothes(db, piece)
 
 # # Not necessary in MVP!
 # @app.post('/signin')
