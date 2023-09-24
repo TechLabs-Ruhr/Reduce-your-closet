@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import '../CSS/MainPage.css';
+
 
 function Register() {
   const [values, setValues] = useState({
@@ -114,13 +116,9 @@ function Register() {
           <span id="email-error">Please enter a password </span>
         )}
         
-      <div className="Terms">
-        <div className="container">
-          <div>
+      <div id="Terms">
             <input type="checkbox" id="agree" onChange={checkboxHandler} />
-            <label htmlFor="agree"> I agree to <b>terms and conditions</b></label>
-          </div>
-        </div>
+            <label id="conditions"> I agree to <b>terms and conditions</b></label>
       </div>
       <br></br>
         {!valid && (

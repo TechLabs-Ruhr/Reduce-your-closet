@@ -83,8 +83,6 @@ function Signin() {
         </div>
       </form>
 
-      
-
     </div>
   );
 
@@ -93,10 +91,10 @@ function Signin() {
     <div className="login">
       <div className="login-form">
           <Link to="/" > 
+          <br></br>
             <button className="homepagebutton"> GO BACK TO HOMEPAGE </button> 
           </Link>
           <br></br>  
-          <br></br> 
             <div className="title">SIGN IN</div>
               <div className="form">
                 <div className="button-container">
@@ -104,6 +102,7 @@ function Signin() {
                 </div>
              </div>
            </div>
+           <img src="sign in pictures/SigninPhoto.png" alt="orderingclothes" id='signinpicture'></img>
     </div>
   </>
   );

@@ -48,13 +48,12 @@
     }    
 
     #itemForm {
-    padding: 60px 0px;
+    padding: 40px 0px;
         }    
     
     #cancel,  #create {
     width: 112px;
     height: 44px;
-    padding: 8px 16px;
     margin: 25px;
     justify-content: space-between;
     align-items: center;

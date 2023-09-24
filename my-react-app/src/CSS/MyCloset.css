@@ -75,8 +75,7 @@ border: white;
 }
 
 #items-container p {
-    font-size: 11px;
-   
+font-size: 11px;   
 }
 
 .ClosetButtons {
@@ -91,17 +90,35 @@ line-height: 18px;
 letter-spacing: 0.8px;
 }
 
+.confirmbutton {
+width: 124px;
+margin-bottom: 5px;
+border-radius: 8px;
+background: #E3B881;
+color: var(--blackish, #2E2B2B);
+font-size: 10px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0.8px;
+margin-left: 10px;
+}
 
-#datepicker input {
-width: 70px;   
+#container form{
+display: flex;
+flex-direction: row;
+}
+
+#datepicker {
+width: 75px;   
+height: 10px;
 font-size: 55%;
 border-radius: 8px;
 }
 
-#datepicker button {
+#submit {
 width: 45px;
+height: 18px;
 border-radius: 6px;
-margin-left: 5px;
 background: #E3B881;
 color: var(--blackish, #2E2B2B);
 font-size: 8px;
@@ -109,7 +126,6 @@ font-weight: 700;
 line-height: 13px;
 letter-spacing: 0.5px;
 }
-
 
 #editform {
 position: absolute;
@@ -135,19 +151,4 @@ border-radius: 20px;
 #editform input, label {
 font-size: 80%;
 }
-
-
-.confirmbutton {
-width: 124px;
-margin-bottom: 5px;
-border-radius: 8px;
-background: #E3B881;
-color: var(--blackish, #2E2B2B);
-font-size: 10px;
-font-weight: 600;
-line-height: 18px;
-letter-spacing: 0.8px;
-margin-left: 10px;
-}
-
 
