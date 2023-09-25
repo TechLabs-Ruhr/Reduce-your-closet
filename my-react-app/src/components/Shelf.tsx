@@ -4,14 +4,12 @@ import WearingCounter from "./WearingCounter"
 import '../CSS/MyCloset.css'
 import { Piece } from '../types'
 
-
 const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted = true}: {
   itemList: Piece[],
   canBeDeleted?: boolean,
   canBeEdited?: boolean,
   canBeCounted?: boolean
 }) => {
-
 
   return (
     
@@ -28,14 +26,13 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
             <p> Size: {item.size} </p>
             <p> Price: {item.price} €</p>
         </fieldset>
-        
    
             <div id= 'itemsbuttons'>
             { canBeEdited && <EditForm item={item} />}
           
-            { canBeDeleted && <DeleteButton/>}
+            { canBeDeleted && <DeleteButton cloth_id={item.id}/>}
            
-            { canBeCounted && <WearingCounter/>}
+            { canBeCounted && <WearingCounter cloth_id={item.id}/>}
             </div>
          </div>
            

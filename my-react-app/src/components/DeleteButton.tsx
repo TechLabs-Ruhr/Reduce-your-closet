@@ -1,18 +1,25 @@
-import { useEffect, useState} from 'react'
+import { useState} from 'react'
 
-const DeleteButton = () => {
+type ClothId ={cloth_id:number}
+const DeleteButton = (props: ClothId) => {
 
   const [feedback, setFeedback] = useState(null);
 
-  //useEffect(() => {
-  //fetch('', { method: 'DELETE' })
-  //     .then(() => setFeedback('Deleted successfuly'));
-//}, []);
+
+const DeleteCloth = (cloth_id: number) => { 
+      const requestDate = {
+          method: 'DELETE', 
+          headers: {
+              'Content-Type': 'application/json',
+          }
+      };
+      fetch(`http://localhost:8080/delete_piece/${cloth_id}`,requestDate)
+  }; 
 
 
   return (
     <div className="delete-button">
-      <button className="ClosetButtons" onClick={() => ( {type: 'delete'} )}>REMOVE</button>
+      <button className="ClosetButtons" onClick={() => DeleteCloth(props.cloth_id)}>REMOVE</button>
       <span id="feedback">{feedback}</span>
     </div>
   );

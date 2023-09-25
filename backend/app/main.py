@@ -49,7 +49,7 @@ async def updateClothes(piece_id: int, piece: schemas.PieceBase, db: Session = D
 async def deleteClothes(piece_id: int, db: Session = Depends(get_db)):
  	return crud.delete_clothes(db, piece_id)
 
-@app.post('/clth/{cloth_id}/adddate')
+@app.post('/clth/{cloth_id}/{timestamp}/adddate')
 async def add_date(cloth_id: int, timestamp: str, db: Session = Depends(get_db)):
 	return crud.add_date(db = db, cloth_id = cloth_id, timestamp = timestamp)
 

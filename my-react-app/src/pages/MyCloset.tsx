@@ -43,28 +43,6 @@ const MyCloset = () => {
 
     },[clothes])
 
-    
-    /*useEffect(() => {
-       fetch("http://localhost:8080/clth/all")
-       .then(response => response.json())
-       .then(data => {
-         setClothes(data);
-         setTop(data);
-         setBottom(data);
-         setShoes(data);
-         setOutwear(data);
-         setAccesorie(data);
-         setBag(data);
-       })
-       .catch((error) => {
-         console.error('Error:', error);
-      setFeedback("Something went wrong, please refresh the page");
-      });
-
-    }) */
-
-    
-
     const [itemToShow, setItemToShow] = useState('');
   
   return ( 

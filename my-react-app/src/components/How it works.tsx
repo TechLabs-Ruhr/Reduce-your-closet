@@ -11,9 +11,9 @@ const HowItWorks = () => {
       </div>
         
       <div className="paragrafs">
-        <p> 1. Add Your Clothes </p>
-        <p> 2. Track Your Clothes </p>
-        <p> 3. Check What You Wear Most </p>
+        <p> 1. Add Your clothes to the Smartrobe </p>
+        <p> 2. Track Your clothes </p>
+        <p> 3. Check what You wear most often </p>
       </div>
     </div>
   );

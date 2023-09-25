@@ -1,13 +1,8 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import '../CSS/MyCloset.css'
  
-function WearingCounter() {
-
-//Wearing Counter, 
-//User should be able to choose date when item was worn
-//User should be able to mark item as worn on Click using SUBMIT BUTTON, 
-//data about wearing should be stored and after used for wearing STATITICS (separated page named MY STATISTICS)
-//HTTP POST or PATCH Request Method (i am not quite sure here, cause its new data about existing item)
+type ClothId ={cloth_id:number}
+function WearingCounter(props: ClothId) {
 
   const [showDatePicker, setShowDatePicker] = useState(false);
   
@@ -20,22 +15,21 @@ function WearingCounter() {
 
     {/* DATE CHANGE */}
     const handleChange = (e:any) => {
-      date [0];
       setDate(e.target.value);
+      console.log(typeof date)
     };
 
     {
-     /* useEffect(() => {
-          // POST request using fetch inside useEffect React hook
+    const SendDate = (cloth_id: number, timestamp: string) => { 
+      console.log (date)
           const requestDate = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+              method: 'POST', 
+              headers: {
+                  'Content-Type': 'application/json',
+              }
           };
-          fetch('', requestDate)
-              .then(response => response.json())
-              .then(data => setDate(data.id));
-      }, []); */
+          fetch(`http://localhost:8080/clth/${cloth_id}/${timestamp}/adddate`,requestDate)
+      }; 
 
   return (
     <div className="counter">
@@ -50,7 +44,7 @@ function WearingCounter() {
         ( <form onChange={handleChange}>
             <input id='datepicker'type="date" />
           {/* SUBMIT BUTTON */}
-            <button id="submit" type='submit'> Submit </button>  
+            <button id="confirm" type='button' onClick={() => SendDate(props.cloth_id, date)}> Submit </button>  
         </form> )
         : null}
       </div>
