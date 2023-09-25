@@ -55,10 +55,10 @@ class WornDatesBase(BaseModel):
     class Config:
         orm_mode = True
 
-class WornDatesCreate:
+class WornDatesCreate(WornDatesBase):
     pass
 
-class WornDates:
+class WornDates(WornDatesBase):
     id: int
 
 
