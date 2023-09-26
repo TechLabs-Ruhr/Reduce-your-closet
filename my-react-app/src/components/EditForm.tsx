@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import '../CSS/MyCloset.css';
 
 
@@ -66,37 +66,18 @@ const EditForm = ({ item }: { item: any}) => {
     toggleEditForm();
   }
   
+ const EditItem = () => {   
+const data = {notes: editedItem.description, color: editedItem.color, brand: editedItem.brand, price: Number(editedItem.price), size: editedItem.size, category: item.category, id:item.id};
+console.log (item.description)
+    fetch(`http://localhost:8080/update_piece/${item.id}`, {
+    headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+    },
+    method: "PUT",	
+    body: JSON.stringify(data) })
+  }
 
-    /* useEffect(() => {
-        let PatchRequest = () => {
-        // PATCH request with fetch API in javascript
-        fetch("", {
-        headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-        },
-        method: "PATCH",	
-        // Fields that to be updated are passed
-        body: JSON.stringify({
-          color: '',
-          brand: '',
-          size: '',
-          description: '',
-          price: ''
-        })
-       })
-    .then(function (response) {
-  
-    console.log(response);
-    return response.json();
-    })
-    .then(function (data) {
-    console.log(data);
-    });
-  };
-  
-  PatchRequest(); }
-  , []); */
 
     
   return (
@@ -141,7 +122,7 @@ const EditForm = ({ item }: { item: any}) => {
           <label>Price in €</label>
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           {/* CONFIRM BUTTON */}
-          <button className="confirmbutton" type='submit'>CONFIRM</button>
+          <button className="confirmbutton" type='button' onClick={() => EditItem ()} >CONFIRM</button>
       
         </form>)
         : null}

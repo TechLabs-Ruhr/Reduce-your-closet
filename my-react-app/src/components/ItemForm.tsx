@@ -37,6 +37,7 @@ const ItemForm = ({typeOfItem}: { typeOfItem: string }) => {
       
       // HTTP POST to Backend to create a new item
       const data = {notes: description, color, brand, price, size, category: typeOfItem};
+      console.log(data)
       fetch("http://localhost:8080/additem/create", {
           method: 'POST', 
           headers: {

@@ -18,6 +18,15 @@ const MyCloset = () => {
     const [bag, setBag] = useState<Piece[]>([]);
     const [feedback, setFeedback] = useState('');
 
+    const UpdateCloths = () => { fetch("http://localhost:8080/clth/all")
+    .then(response => response.json())
+    .then(data => {
+      setClothes(data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+   setFeedback("Something went wrong, please refresh the page");
+   });}
     const getCategory = (category:string)=> { 
       fetch("http://localhost:8080/clth/all")
       .then(response => response.json())
@@ -60,27 +69,27 @@ const MyCloset = () => {
       <span id="feedback">{feedback}</span>
        {/* ITEMS ADDED BY USER DIPLAY HERE */}
         <div onClick={() => getCategory("top")}> <h3> TOPS </h3>
-          {itemToShow === 'top' && <div> <Shelf itemList={top} /> </div>}
+          {itemToShow === 'top' && <div> <Shelf itemList={top} UpdateClothes={UpdateCloths} /> </div>}
         </div>
 
         <div  onClick={() => getCategory("bottom")}> <h3> BOTTOMS</h3> 
-          {itemToShow === 'bottom' && <div> <Shelf itemList={bottom} /> </div>}
+          {itemToShow === 'bottom' && <div> <Shelf itemList={bottom} UpdateClothes={UpdateCloths}/> </div>}
         </div>
            
         <div  onClick={() => getCategory("shoes")}> <h3> SHOES </h3> 
-          {itemToShow === 'shoes' && <div> <Shelf itemList={shoes} /> </div>}
+          {itemToShow === 'shoes' && <div> <Shelf itemList={shoes} UpdateClothes={UpdateCloths}/> </div>}
         </div>
            
         <div onClick={() => getCategory("outwear")}> <h3> OUTWEAR </h3> 
-          {itemToShow === 'outwear' && <div> <Shelf itemList={outwear} /> </div>}
+          {itemToShow === 'outwear' && <div> <Shelf itemList={outwear} UpdateClothes={UpdateCloths} /> </div>}
         </div>
               
         <div  onClick={() => getCategory("accesorie")}> <h3> ACCESORIES </h3> 
-          {itemToShow === 'accesorie' && <div> <Shelf itemList={accesorie} /> </div>}
+          {itemToShow === 'accesorie' && <div> <Shelf itemList={accesorie} UpdateClothes={UpdateCloths} /> </div>}
         </div>
 
         <div onClick={() => getCategory("bag")}> <h3> BAGS </h3> 
-        {itemToShow === 'bag' && <div> <Shelf itemList={bag} /> </div>}
+        {itemToShow === 'bag' && <div> <Shelf itemList={bag} UpdateClothes={UpdateCloths} /> </div>}
         </div>
     </div>
 

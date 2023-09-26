@@ -1,6 +1,6 @@
 import { useState} from 'react'
 
-type ClothId ={cloth_id:number}
+type ClothId ={cloth_id:number, UpdateClothes: ()=>void}
 const DeleteButton = (props: ClothId) => {
 
   const [feedback, setFeedback] = useState(null);
@@ -14,6 +14,7 @@ const DeleteCloth = (cloth_id: number) => {
           }
       };
       fetch(`http://localhost:8080/delete_piece/${cloth_id}`,requestDate)
+      props.UpdateClothes ()
   }; 
 
 
