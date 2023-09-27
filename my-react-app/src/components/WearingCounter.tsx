@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import '../CSS/MyCloset.css'
  
-type ClothId ={cloth_id:number}
+type ClothId ={cloth_id:number, GetCPU: (value:number)=>void}
 function WearingCounter(props: ClothId) {
 
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -29,6 +29,7 @@ function WearingCounter(props: ClothId) {
               }
           };
           fetch(`http://localhost:8080/clth/${cloth_id}/${timestamp}/adddate`,requestDate)
+          props.GetCPU(cloth_id)
       }; 
 
   return (

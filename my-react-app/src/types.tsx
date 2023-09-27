@@ -5,5 +5,7 @@ export interface Piece {
     size:string,
     notes: string,
     price: number,
-    id: number
+    id: number,
+    cost_per_use: number,
+    timesWorn: number
   }

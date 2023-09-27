@@ -57,6 +57,10 @@ async def add_date(cloth_id: int, timestamp: str, db: Session = Depends(get_db))
 async def get_dates_by_id(cloth_id: int, db: Session = Depends(get_db)):
 	return crud.get_dates_by_id(id = cloth_id, db = db)
 
+@app.get('/clth/{cloth_id}/getcpu')
+async def get_cpu_by_id(cloth_id: int, db: Session = Depends(get_db)):
+	return crud.get_cpu_by_id(id = cloth_id, db = db)
+
 # Legacy Routes ----------------------------------------------
 # @app.get('/get_clothes')
 # async def getClothes(user: Signup):

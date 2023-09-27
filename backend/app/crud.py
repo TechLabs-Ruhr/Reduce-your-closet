@@ -48,3 +48,15 @@ def add_date(db:Session, cloth_id: int, timestamp: str):
 
 def get_dates_by_id(db: Session, id: int):
     return db.query(models.DebugTable).filter(models.DebugTable.cloth_id == id).all()
+
+def get_cpu_by_id(db: Session, id: int):
+    dates=get_dates_by_id(db,id)
+    numberofdates=len(dates)
+    cloth=get_piece(db,id)
+    price=cloth.price
+    cpu=price/numberofdates
+    setattr (cloth, 'cost_per_use', cpu)
+    setattr (cloth,'timesWorn', numberofdates)
+    db.commit()
+    db.refresh(cloth)
+    return cpu

@@ -28,7 +28,14 @@ const MyCloset = () => {
    setFeedback("Something went wrong, please refresh the page");
    });}
     const getCategory = (category:string)=> { 
-      fetch("http://localhost:8080/clth/all")
+      const requestCategory = {
+        method: 'GET', 
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
+      fetch("http://localhost:8080/clth/all", requestCategory)
       .then(response => response.json())
       .then(data => {
         setClothes(data);

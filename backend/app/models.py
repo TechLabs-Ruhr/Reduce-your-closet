@@ -61,7 +61,7 @@ class DebugTable(Base):
     timestamp = Column(String)
 
 class Piece(Base):
-    __tablename__ = 'pieces'
+    __tablename__ = 'pieces3'
 
     id = Column(Integer, primary_key = True, index = True)
     category = Column(Enum(Category))
@@ -78,7 +78,29 @@ class Piece(Base):
     #buying info - text
     #care instructions
     #tag
+
     notes = Column(String)
+    timesWorn = Column(Integer)
+##class PieceUpdated(Base):
+   # __tablename__ = 'piecesupdated2'
+
+    #id = Column(Integer, primary_key = True, index = True)
+    #category = Column(Enum(Category))
+    #price = Column(Float)
+    #color = Column(Enum(Colors))
+    #size = Column(String)
+    #brand = Column(String)
+    #cost_per_use = Column(Float)
+
+    #worndates = relationship('WornDates')
+    #worn = Column(ARRAY(DateTime))
+    #worn dates - list
+    #picture
+    #buying info - text
+    #care instructions
+    #tag
+    #notes = Column(String)
+    #timesWorn = Column(Integer)
 
     # def __init__(self, category, color, size, brand):
     #     self.category = category
