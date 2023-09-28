@@ -27,6 +27,7 @@ const MyCloset = () => {
       console.error('Error:', error);
    setFeedback("Something went wrong, please refresh the page");
    });}
+   
     const getCategory = (category:string)=> { 
       const requestCategory = {
         method: 'GET', 

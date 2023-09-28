@@ -23,11 +23,7 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
     }
 };
   fetch (`http://localhost:8080/clth/${cloth_id}/getcpu`, requestCPU)
-  .then(response => response.json())
-      .then(data => {
-    UpdateClothes ()
-      })
-      console.log ('hello')
+
 }
 
   return (
@@ -53,7 +49,7 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
           
             { canBeDeleted && <DeleteButton cloth_id={item.id} UpdateClothes={UpdateClothes}/>}
            
-            { canBeCounted && <WearingCounter cloth_id={item.id} GetCPU={GetCPU}/>}
+            { canBeCounted && <WearingCounter cloth_id={item.id} GetCPU={GetCPU} UpdateClothes={UpdateClothes}/>}
             </div>
          </div>
       ))}
