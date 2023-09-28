@@ -18,7 +18,8 @@ const MyCloset = () => {
     const [bag, setBag] = useState<Piece[]>([]);
     const [feedback, setFeedback] = useState('');
 
-    const UpdateCloths = () => { fetch("http://localhost:8080/clth/all")
+    const UpdateCloths = () => {   console.log('hello')
+    fetch("http://localhost:8080/clth/all")
     .then(response => response.json())
     .then(data => {
       setClothes(data);
@@ -27,7 +28,7 @@ const MyCloset = () => {
       console.error('Error:', error);
    setFeedback("Something went wrong, please refresh the page");
    });}
-   
+
     const getCategory = (category:string)=> { 
       const requestCategory = {
         method: 'GET', 
@@ -35,6 +36,8 @@ const MyCloset = () => {
             'Content-Type': 'application/json',
         }
     };
+
+    
 
       fetch("http://localhost:8080/clth/all", requestCategory)
       .then(response => response.json())

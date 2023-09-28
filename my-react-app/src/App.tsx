@@ -33,12 +33,8 @@ class App extends Component {
         <Route path= '/additem' Component={AddItem} />
         <Route path= '/faq' Component={FAQ} />
         <Route path= '*' Component={NotFound}/>
-        
-        </Routes>
-      
+    </Routes>
         <div> <Footer /> </div>
-        
-    
     </BrowserRouter>
     
 

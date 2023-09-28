@@ -67,7 +67,8 @@ const EditForm = ({ item }: { item: any}) => {
   }
   
  const EditItem = () => {   
-const data = {notes: editedItem.description, color: editedItem.color, brand: editedItem.brand, price: Number(editedItem.price), size: editedItem.size, category: item.category, id:item.id};
+const data = {notes: editedItem.description, color: editedItem.color, brand: editedItem.brand, 
+  price: Number(editedItem.price), size: editedItem.size, category: item.category, id:item.id};
 console.log (item.description)
     fetch(`http://localhost:8080/update_piece/${item.id}`, {
     headers: {
@@ -78,8 +79,6 @@ console.log (item.description)
     body: JSON.stringify(data) })
   }
 
-
-    
   return (
     <div>
       <div>
@@ -122,7 +121,7 @@ console.log (item.description)
           <label>Price in €</label>
           <input type='text' placeholder={item.price} onChange={handlePriceChange}/>
           {/* CONFIRM BUTTON */}
-          <button className="confirmbutton" type='button' onClick={() => EditItem ()} >CONFIRM</button>
+          <button className="confirmbutton" type='submit' onClick={() => EditItem ()} >CONFIRM</button>
       
         </form>)
         : null}

@@ -29,8 +29,8 @@ function WearingCounter(props: ClothId) {
               }
           };
           fetch(`http://localhost:8080/clth/${cloth_id}/${timestamp}/adddate`,requestDate)
-          props.GetCPU(cloth_id)
-          props.UpdateClothes()
+          .then (response => { props.GetCPU(cloth_id)
+          })
       }; 
 
   return (
@@ -52,7 +52,6 @@ function WearingCounter(props: ClothId) {
       </div>
     </div>
   );
-}
-}
+}}
 
-export default WearingCounter 
+  export default WearingCounter 

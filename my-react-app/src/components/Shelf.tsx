@@ -23,7 +23,7 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true, canBeCounted 
     }
 };
   fetch (`http://localhost:8080/clth/${cloth_id}/getcpu`, requestCPU)
-
+  .then (response => {UpdateClothes ()})
 }
 
   return (

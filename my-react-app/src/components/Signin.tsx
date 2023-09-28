@@ -31,31 +31,7 @@ function Signin() {
   const handleSubmit = (event:any) => {
     //Prevent page reload
     event.preventDefault();
-
-/*const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({username: 'acutalusername', password: 'actualpassword'})
-      };
-    
-      fetch('http://localhost:8080/signin',requestOptions)
-        .then((response) => {
-          if(! response.ok){
-           throw Error(response.statusText);
-          }
-          response.json()})
-        .then((data) => {
-           console.log(data);
-
-        setIsSubmitted(true);
-           //redirect and set current user
-         })
-         .catch((err) => {
-            console.log(err.message);
-        setErrorMessages({ name: "uname", message: err.message });
-        //  }); */
   }; 
-
 
 
   // Generate JSX code for error message

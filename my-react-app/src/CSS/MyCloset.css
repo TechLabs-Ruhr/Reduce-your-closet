@@ -59,14 +59,14 @@ justify-content: center
 
 #itemsbuttons {
 padding: 10px;
-margin:5px 20px;
+margin: 15px
 }
 
 
 fieldset {
 margin:15px;
-width: 170px;
-height: 170px;
+width: 165px;
+height: 165px;
 flex-shrink: 0;
 border-radius: 10px;
 background: #D9D9D9;
@@ -78,7 +78,7 @@ font-size: 11px;
 }
 
 .ClosetButtons {
-width: 124px;
+width: 165px;
 margin-bottom: 5px;
 border-radius: 8px;
 background: #E3B881;
@@ -108,14 +108,15 @@ flex-direction: row;
 }
 
 #datepicker {
-width: 75px;   
+width: 100px;   
 height: 10px;
+margin-right: 5px;
 font-size: 55%;
 border-radius: 8px;
 }
 
 #confirm {
-width: 45px;
+width: 60px;
 height: 18px;
 border-radius: 6px;
 background: #E3B881;
